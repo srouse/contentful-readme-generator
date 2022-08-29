@@ -30,6 +30,10 @@ __Developer Emails__: scott.rouse@summitcreditunion.com
 
 __NPM URL__: https://www.npmjs.com/package/contentful-readme-generator
 
+__Repo URL__: https://github.com/srouse/contentful-readme-generator
+
+__Documentation URL__: https://github.com/srouse/contentful-readme-generator
+
 __Services Utilized__: 
 
 - Contentful, https://www.contentful.com
@@ -164,9 +168,9 @@ npm publish
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
-*__updated__: 8/29/2022, 3:04:34 PM*
+*__updated__: 8/29/2022, 3:14:26 PM*
 
-*__built__: 8/29/2022, 3:06:30 PM*
+*__built__: 8/29/2022, 3:14:37 PM*
 
 *__space__: 7gg213tt004u*
 
