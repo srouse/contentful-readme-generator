@@ -47,7 +47,6 @@ yargs(hideBin(process.argv))
         accessToken: process.env.CTFL_README_CONTENTFUL_ACCESS_TOKEN,
         entryId,
       };
-      console.log(config)
       const client = contentful.createClient(config);
 
       try {
