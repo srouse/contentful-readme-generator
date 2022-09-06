@@ -24,17 +24,35 @@ yargs(hideBin(process.argv))
     }, 
     async (argv) => {
       log(chalk.blue('Building README from Contentful'));
+      const ctflReadmeJsonRaw = await fs.readFile('ctfl-readme.json')
+        .catch(err => console.log('error with readme...building with .env only'));
+
+      let space = process.env.CTFL_README_CONTENTFUL_SPACE;
+      let environment = process.env.CTFL_README_CONTENTFUL_ENVIRONMENT;
+      let entryId = process.env.CTFL_README_CONTENTFUL_ENTRY_ID;
+      
+      if (ctflReadmeJsonRaw) {
+        const ctflReadmeJson = JSON.parse(ctflReadmeJsonRaw);
+        if ( ctflReadmeJson.contentfulSpace ) 
+          space = ctflReadmeJson.contentfulSpace;
+        if ( ctflReadmeJson.contentfulEnvironment ) 
+          environment = ctflReadmeJson.contentfulEnvironment;
+        if ( ctflReadmeJson.contentfulEntryId ) 
+          entryId = ctflReadmeJson.contentfulEntryId;
+      }
+
       const config = {
-        space: process.env.CTFL_README_CONTENTFUL_SPACE,
-        environment: process.env.CTFL_README_CONTENTFUL_ENVIRONMENT,
+        space,
+        environment,
         accessToken: process.env.CTFL_README_CONTENTFUL_ACCESS_TOKEN,
-        entityId: process.env.CTFL_README_CONTENTFUL_ENTRY_ID
+        entryId,
       };
+      console.log(config)
       const client = contentful.createClient(config);
 
       try {
         const results = await client
-          .getEntry(config.entityId);
+          .getEntry(config.entryId);
 
         // we also need some metadata about the content type
         const contentType = await client 
