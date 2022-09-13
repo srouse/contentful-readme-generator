@@ -85,9 +85,9 @@ export default function buildReadme( contentObj, contentType, config ) {
 
 *__environment__: ${config.environment}*
 
-*__entity id__: ${config.entityId}*
+*__entity id__: ${config.entryId}*
 
-[Edit Contentful Entry](https://app.contentful.com/spaces/${config.space}/environments/${config.environment}/entries/${config.entityId})`);
+[Edit Contentful Entry](https://app.contentful.com/spaces/${config.space}/environments/${config.environment}/entries/${config.entryId})`);
 
   if (doTableOfContents) {
     readmeObj.tableOfContents = `
