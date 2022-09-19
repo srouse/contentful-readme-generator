@@ -1,7 +1,11 @@
 import { renderBadges } from 'badges';
 import toc from 'markdown-toc';
 
-export default function buildReadme( contentObj, contentType, config ) {
+export default function buildReadme(
+  contentObj,
+  contentType,
+  config
+) {
   const readmeObj = {
     "title": '',
     "tableOfContents": '',
@@ -97,11 +101,11 @@ ${toc(readmeObj.body.join('')).content}
 `
   }
 
-  const content = `<!-- 
+  const content = `${readmeObj.title}
+<!-- 
   Do not edit directly, built using contentful-readme-generator.
   Content details in Build Information below.
 -->
-${readmeObj.title}
 ${readmeObj.tableOfContents}
 
 ${readmeObj.body.join('')}`;
