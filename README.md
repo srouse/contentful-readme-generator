@@ -1,8 +1,8 @@
+# Contentful Readme Generator
 <!-- 
   Do not edit directly, built using contentful-readme-generator.
   Content details in Build Information below.
 -->
-# Contentful Readme Generator
 
 - [Description](#description)
 - [How To Install](#how-to-install)
@@ -21,22 +21,6 @@
 
 <span class="badge-npmversion"><a href="https://npmjs.org/package/contentful-readme-generator" title="View this project on NPM"><img src="https://img.shields.io/npm/v/contentful-readme-generator.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/contentful-readme-generator" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/contentful-readme-generator.svg" alt="NPM downloads" /></a></span>
-
-__Project Abbreviation__: contentful-readme-generator
-
-__URL Slug__: readme-project/contentful-readme-generator
-
-__Developer Emails__: scott.rouse@summitcreditunion.com
-
-__NPM URL__: https://www.npmjs.com/package/contentful-readme-generator
-
-__Repo URL__: https://github.com/srouse/contentful-readme-generator
-
-__Documentation URL__: https://github.com/srouse/contentful-readme-generator
-
-__Services Utilized__: 
-
-- Contentful, https://www.contentful.com
 
 ## Description
 
@@ -170,7 +154,7 @@ npm publish
 
 *__updated__: 8/29/2022, 3:14:26 PM*
 
-*__built__: 8/29/2022, 3:14:37 PM*
+*__built__: 2/5/2023, 10:22:05 AM*
 
 *__space__: 7gg213tt004u*
 

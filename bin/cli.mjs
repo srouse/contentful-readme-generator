@@ -5,7 +5,7 @@ import contentful from "contentful";
 import 'dotenv/config';
 import { promises as fs } from 'fs';
 import chalk from 'chalk';
-import buildReadme from './buildReadme.mjs';
+import createReadmeProject from './createReadmeProject.mjs';
 
 const log = console.log;
 
@@ -18,7 +18,7 @@ yargs(hideBin(process.argv))
     (yargs) => {
       yargs.positional('fileName', {
         type: 'string',
-        default: 'README.md',
+        default: 'README',
         describe: 'The name of the file to generate. (can NOT be in a folder)'
       });
     }, 
@@ -46,27 +46,15 @@ yargs(hideBin(process.argv))
         environment,
         accessToken: process.env.CTFL_README_CONTENTFUL_ACCESS_TOKEN,
         entryId,
+        fileName: argv.fileName,
+        folderName: argv.fileName, // where other pages need to be created...
       };
       const client = contentful.createClient(config);
 
       try {
-        const results = await client
-          .getEntry(config.entryId);
-
-        // we also need some metadata about the content type
-        const contentType = await client 
-          .getContentType(results.sys.contentType.sys.id);
-
-        log(chalk.grey('Loaded Entry'));
-        const fileContent = buildReadme(
-          results,
-          contentType,
-          config
+        await createReadmeProject(
+          client, entryId, config,
         );
-        log(chalk.grey('Built Content'));
-
-        await fs.writeFile(argv.fileName, fileContent);
-        log(chalk.grey(`Created file: ${argv.fileName}`));
 
         log(chalk.green('Contentful Readme Generator done.'));
       }catch(err) {
