@@ -13,15 +13,9 @@ yargs(hideBin(process.argv))
   .scriptName("ctfl-readme")
   .usage('$0 <cmd> [args]')
   .command(
-    'build [fileName]',
+    'build',
     'Load Contentful content and build a readme file',
-    (yargs) => {
-      yargs.positional('fileName', {
-        type: 'string',
-        default: 'README',
-        describe: 'The name of the file to generate. (can NOT be in a folder)'
-      });
-    }, 
+    (yargs) => {}, 
     async (argv) => {
       log(chalk.blue('Building README from Contentful'));
       const ctflReadmeJsonRaw = await fs.readFile('ctfl-readme.json')
@@ -30,6 +24,11 @@ yargs(hideBin(process.argv))
       let space = process.env.CTFL_README_CONTENTFUL_SPACE;
       let environment = process.env.CTFL_README_CONTENTFUL_ENVIRONMENT;
       let entryId = process.env.CTFL_README_CONTENTFUL_ENTRY_ID;
+      let rootFileName = 'README';
+      let folderName = 'README';
+      let htmlTemplate = '';
+      let htmlRootFileName = 'README';
+      let htmlDist = 'dist';
       
       if (ctflReadmeJsonRaw) {
         const ctflReadmeJson = JSON.parse(ctflReadmeJsonRaw);
@@ -39,6 +38,21 @@ yargs(hideBin(process.argv))
           environment = ctflReadmeJson.contentfulEnvironment;
         if ( ctflReadmeJson.contentfulEntryId ) 
           entryId = ctflReadmeJson.contentfulEntryId;
+        if ( ctflReadmeJson.rootFileName ) 
+          rootFileName = ctflReadmeJson.rootFileName;
+        if ( ctflReadmeJson.folderName ) 
+          folderName = ctflReadmeJson.folderName;
+        if ( ctflReadmeJson.htmlTemplate ) 
+          htmlTemplate = ctflReadmeJson.htmlTemplate;
+        if ( ctflReadmeJson.htmlRootFileName ) 
+          htmlRootFileName = ctflReadmeJson.htmlRootFileName;
+        if ( ctflReadmeJson.htmlDist ) 
+          htmlDist = ctflReadmeJson.htmlDist;
+      }
+
+      if (!space || !environment || !entryId) {
+        log(chalk.red('no space, environment, or entry id found'));
+        return;
       }
 
       const config = {
@@ -46,8 +60,11 @@ yargs(hideBin(process.argv))
         environment,
         accessToken: process.env.CTFL_README_CONTENTFUL_ACCESS_TOKEN,
         entryId,
-        fileName: argv.fileName,
-        folderName: argv.fileName, // where other pages need to be created...
+        rootFileName,
+        folderName,
+        htmlTemplate,
+        htmlRootFileName,
+        htmlDist,
       };
       const client = contentful.createClient(config);
 

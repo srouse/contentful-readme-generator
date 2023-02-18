@@ -14,13 +14,32 @@
   * [Table of Contents](#table-of-contents)
   * [Arguments](#arguments)
 - [How To Deploy](#how-to-deploy)
+- [Summit Rates Central Release 2023-02-03](#summit-rates-central-release-2023-02-03)
+- [Testing](#testing)
+- [Contentful Project Architecture](#contentful-project-architecture)
+- [Summit Rates Central Release History](#summit-rates-central-release-history)
+- [DAM Cover Icon](#dam-cover-icon)
+- [Contentful Team Overall Projects and Architecture](#contentful-team-overall-projects-and-architecture)
+- [Contentful Project Architecture](#contentful-project-architecture-1)
 - [Build Information](#build-information)
 
 ---
 
 
+__Title__: Contentful Readme Generator Project
+
 <span class="badge-npmversion"><a href="https://npmjs.org/package/contentful-readme-generator" title="View this project on NPM"><img src="https://img.shields.io/npm/v/contentful-readme-generator.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/contentful-readme-generator" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/contentful-readme-generator.svg" alt="NPM downloads" /></a></span>
+
+__Project Abbreviation__: contentful-readme-generator
+
+__Developer Emails__: scott.rouse@summitcreditunion.com
+
+__NPM URL__: https://www.npmjs.com/package/contentful-readme-generator
+
+__Repo URL__: https://github.com/srouse/contentful-readme-generator
+
+__Documentation URL__: https://github.com/srouse/contentful-readme-generator
 
 ## Description
 
@@ -106,7 +125,7 @@ There is no specific structure needed to build a readme file, but there are limi
 
 ### What Does NOT work as well
 
-__Rich Text.__ There is a markdown editor in Contentful, so rich text is a very round about way of getting back to markdown.
+__Rich Text.__ Avoid rich text in your Content Type. There is a markdown editor in Contentful, so rich text is a very round about way of getting back to markdown.
 
 ### Badges
 
@@ -148,18 +167,53 @@ Publish to NPM
 npm publish
 ```
 
+## Summit Rates Central Release 2023-02-03
+- Added "description" to Rates Product
+- Updated environment checking to include Contentful environments that start with "sandbox-rates-central...".
+- Hooked up "edit" state to localStorage state. On refresh the page will keep edit state.
+- Updated refresh button in scurates-navigation (upper right button) to refresh the entire page if holding the shift key. Useful for web components only updates. 
+- Fixed API bug where credit rate adjustments where looking for null versus looking for explicit undefined (zero value didn't create attribute)
+- Add ReferentialRateEngine content type.
+- Added Ref.RateEngine to App
+- Added Ref.RateEngine to API
+
+## Testing
+- Look at rate in Contentful App, both in edit mode and published mode.
+- Check that the referred rate is aligned with other rate and that it changes with it.
+- Check that margin, ceiling, and floor apply as expected. (including nulls).
+- Check that the API shows the correct information (referred rate).
+
+
+## Contentful Project Architecture
+[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")[image source](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
+
+
+
+## [Summit Rates Central Release History](./README/summit-rates-central-release-history.md)
+
+
+## DAM Cover Icon
+[![DAM Cover Icon](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png)](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png "View Full Size")[image source](https://www.figma.com/file/fdgg22P6rDRQl3rDWl7RHs/?node-id=205:122)
+
+## Contentful Team Overall Projects and Architecture
+
+## Contentful Project Architecture
+[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")[image source](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
+
+
+
 ## Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
-*__updated__: 8/29/2022, 3:14:26 PM*
+*__updated__: 2/18/2023, 10:37:10 AM*
 
-*__built__: 2/5/2023, 10:22:05 AM*
+*__built__: 2/18/2023, 12:24:35 PM*
 
 *__space__: 7gg213tt004u*
 
-*__environment__: sandbox*
+*__environment__: sandbox-readme*
 
 *__entity id__: 6VeYGHMAi2Tsykl9N671JX*
 
-[Edit Contentful Entry](https://app.contentful.com/spaces/7gg213tt004u/environments/sandbox/entries/6VeYGHMAi2Tsykl9N671JX)
+[Edit Contentful Entry](https://app.contentful.com/spaces/7gg213tt004u/environments/sandbox-readme/entries/6VeYGHMAi2Tsykl9N671JX)
