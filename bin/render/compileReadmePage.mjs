@@ -5,6 +5,7 @@ import {
   isReference,
   isReferenceArray,
   toKebobCase,
+  uniqueDefaultName,
 } from './utils.mjs';
 import renderImage from './renderImage.mjs';
 import
@@ -32,9 +33,10 @@ export default function compileReadmePage(
 
   buildState.pagesLookup[contentObj.sys.id] = true;
 
+  const name = contentObj.fields.name || uniqueDefaultName();
   const readmeObj = {
-    'url': `${config.folderName}/${toKebobCase(contentObj.fields.name)}.md`,
-    'htmlUrl': `${config.folderName}/${toKebobCase(contentObj.fields.name)}.html`,
+    'url': `${config.folderName}/${toKebobCase(name)}.md`,
+    'htmlUrl': `${config.folderName}/${toKebobCase(name)}.html`,
     'name': '(Not Found, Fill Out Header)',
     'tableOfContents': '',
     'body': [],

@@ -14,12 +14,12 @@
   * [Table of Contents](#table-of-contents)
   * [Arguments](#arguments)
 - [How To Deploy](#how-to-deploy)
-- [Summit Rates Central Release 2023-02-03](#summit-rates-central-release-2023-02-03)
+- [undefined](#undefined)
 - [Testing](#testing)
 - [Contentful Project Architecture](#contentful-project-architecture)
 - [Summit Rates Central Release History](#summit-rates-central-release-history)
 - [DAM Cover Icon](#dam-cover-icon)
-- [Contentful Team Overall Projects and Architecture](#contentful-team-overall-projects-and-architecture)
+- [undefined](#undefined-1)
 - [Contentful Project Architecture](#contentful-project-architecture-1)
 - [Build Information](#build-information)
 
@@ -167,7 +167,7 @@ Publish to NPM
 npm publish
 ```
 
-## Summit Rates Central Release 2023-02-03
+## undefined
 - Added "description" to Rates Product
 - Updated environment checking to include Contentful environments that start with "sandbox-rates-central...".
 - Hooked up "edit" state to localStorage state. On refresh the page will keep edit state.
@@ -195,7 +195,7 @@ npm publish
 ## DAM Cover Icon
 [![DAM Cover Icon](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png)](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png "View Full Size")[image source](https://www.figma.com/file/fdgg22P6rDRQl3rDWl7RHs/?node-id=205:122)
 
-## Contentful Team Overall Projects and Architecture
+## undefined
 
 ## Contentful Project Architecture
 [![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")[image source](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
@@ -208,7 +208,7 @@ npm publish
 
 *__updated__: 2/18/2023, 10:37:10 AM*
 
-*__built__: 2/18/2023, 12:26:44 PM*
+*__built__: 2/21/2023, 4:57:29 PM*
 
 *__space__: 7gg213tt004u*
 

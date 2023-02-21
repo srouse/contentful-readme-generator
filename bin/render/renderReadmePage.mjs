@@ -1,5 +1,5 @@
 import {
-  toKebobCase,
+  toKebobCase, uniqueDefaultName,
 } from './utils.mjs';
 import compileReadmePage from './compileReadmePage.mjs';
 
@@ -25,7 +25,7 @@ export default function renderReadmePage(
     buildState.totals.readmePage++;
   }
 
-  const name = page.fields.name;
+  const name = page.fields.name || uniqueDefaultName();
   return `## [${name}](./${config.folderName}/${toKebobCase(name)}.${
     LinkExtensionReplacment
   })\n\n`;

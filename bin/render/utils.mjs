@@ -65,3 +65,9 @@ export function toKebobCase(str) {
         .replace(/[\s_]+/g, '-')
         .toLowerCase();
 };
+
+let untitledNumber = 0;
+
+export function uniqueDefaultName() {
+  return `untitled-${untitledNumber++}`;
+}
