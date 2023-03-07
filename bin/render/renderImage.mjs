@@ -26,16 +26,20 @@ export default function renderImage(
       image.fields.figmaFileId &&
       image.fields.figmaNodeId
     ) {
-      figmaUrl = `[image source](https://www.figma.com/file/${
+      figmaUrl = `[source](https://www.figma.com/file/${
         image.fields.figmaFileId
       }/?node-id=${
         image.fields.figmaNodeId
       })`;
     }
     const imgUrl = `https:${image.fields.asset.fields.file.url}`;
-    return `\n## ${
+    /*
+    return `\n${
       image.fields.title
-    }\n[![${image.fields.title}](${imgUrl})](${imgUrl} "View Full Size")${figmaUrl}\n\n`;
+    }\n\n[![${image.fields.title}](${imgUrl})](${imgUrl} "View Full Size")\n${figmaUrl}\n\n`;
+    */
+    return `\n[![${image.fields.title}](${imgUrl})](${imgUrl} "View Full Size")
+    \n${image.fields.title} ${figmaUrl}\n`;
   }
   return '';
 }
