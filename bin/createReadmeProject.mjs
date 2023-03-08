@@ -87,8 +87,6 @@ export default async function createReadmeProject(
   await Promise.all(
     buildState.pages.map(async (page) => {
       log(chalk.grey(`Created file: ${page.url}`));
-      console.log('page.url, page.htmlUrl', page.url, page.htmlUrl);
-
       if (templateFileFunk) {
         const finalHtml = templateFileFunk(page.html, css);
         await fsPromise.writeFile(`${config.htmlDist}/${page.htmlUrl}`, finalHtml);

@@ -71,3 +71,9 @@ let untitledNumber = 0;
 export function uniqueDefaultName() {
   return `untitled-${untitledNumber++}`;
 }
+
+export function createContentfulAppLink(
+  entry, config
+) {
+  return `https://app.contentful.com/spaces/${config.space}/environments/${config.environment}/entries/${entry.sys.id}`;
+}

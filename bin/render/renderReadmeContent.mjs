@@ -11,8 +11,17 @@ export default function renderReadmeContent(
   config,
 ) {
   const output = [];
+
+  let header;
+  if (readmeContent.fields.header) {
+    header = readmeContent.fields.header;
+  }else if (readmeContent.fields.name) {
+    header = readmeContent.fields.name;
+  }else{
+    header = readmeContent.fields.title;
+  }
   output.push(
-    `## ${readmeContent.fields.header}`
+    `## ${header}`
   );
 
   if (readmeContent.fields.content) {
@@ -28,11 +37,11 @@ export default function renderReadmeContent(
     const content = readmeContent.fields[typeField.id];
 
     if (isReference(typeField, 'image')) {
-      output.push(renderImage(content));
+      output.push(renderImage(content, config));
     }
     if (isReferenceArray(typeField, ['image'])) {
       content?.map(image => {
-        output.push(renderImage(image));
+        output.push(renderImage(image, config));
       });
     }
   });

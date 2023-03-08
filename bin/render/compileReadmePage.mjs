@@ -2,6 +2,7 @@ import { renderBadges } from 'badges';
 import toc from 'markdown-toc';
 import renderReadmeContent from './renderReadmeContent.mjs';
 import {
+  createContentfulAppLink,
   isReference,
   isReferenceArray,
   toKebobCase,
@@ -11,6 +12,7 @@ import renderImage from './renderImage.mjs';
 import
   renderReadmePage,
   {
+    HomeLinkReplacment,
     LinkExtensionReplacment
 } from './renderReadmePage.mjs';
 import { marked } from 'marked';
@@ -23,7 +25,8 @@ export default function compileReadmePage(
   readmeContentType,
   readmePageType,
   buildState,
-  config
+  config,
+  parentPage,
 ) {
 
   if (buildState.pagesLookup[contentObj.sys.id]) {
@@ -35,16 +38,23 @@ export default function compileReadmePage(
 
   const name = contentObj.fields.name || uniqueDefaultName();
   const readmeObj = {
-    'url': `${config.folderName}/${toKebobCase(name)}.md`,
-    'htmlUrl': `${config.folderName}/${toKebobCase(name)}.html`,
     'name': '(Not Found, Fill Out Header)',
     'tableOfContents': '',
     'body': [],
     'content': '',
     'html': '',
   };
+  if (parentPage) {
+    readmeObj.url = `${config.folderName}/${toKebobCase(name)}.md`;
+    readmeObj.htmlUrl = `${config.folderName}/${toKebobCase(name)}.html`;
+    // we know that is only a single folder at present...
+    // readmeObj.body.push(`[back](../${HomeLinkReplacment})\n\n`);
+  }else{
+    readmeObj.url = `${config.rootFileName}.md`;
+    readmeObj.htmlUrl = `${config.htmlRootFileName}.html`;
+  }
+
   let doTableOfContents = true;
-  console.log('start');
   // fields are mostly dynamic with name markdown syntax
   hostType.fields.map(typeField => {
     const content = contentObj.fields[typeField.id];
@@ -119,12 +129,13 @@ export default function compileReadmePage(
             readmeContentType,
             buildState,
             config,
+            readmeObj
           )
         );
       }
       if (isReference(typeField, 'image') ) {
         readmeObj.body.push(
-          renderImage(content)
+          renderImage(content, config)
         );
       }
 
@@ -134,7 +145,7 @@ export default function compileReadmePage(
           const contentType = contentEntry.sys.contentType.sys.id;
           if (contentType === 'image') {
             readmeObj.body.push(
-              renderImage(contentEntry)
+              renderImage(contentEntry, config)
             );
           }
           if (contentType === 'readmeContent') {
@@ -155,6 +166,7 @@ export default function compileReadmePage(
                 readmeContentType,
                 buildState,
                 config,
+                readmeObj
               )
             );
           }
@@ -181,7 +193,7 @@ export default function compileReadmePage(
 
 *__entity id__: ${contentObj.sys.id}*
 
-[Edit Contentful Entry](https://app.contentful.com/spaces/${config.space}/environments/${config.environment}/entries/${contentObj.sys.id})`);
+[Edit Contentful Entry](${createContentfulAppLink(contentObj, config)})`);
 
   if (doTableOfContents) {
     readmeObj.tableOfContents = `
@@ -191,7 +203,9 @@ ${toc(readmeObj.body.join('')).content}
 `
   }
 
-  const readmeContent = `# ${readmeObj.name}
+  // FINAL CONTENT BUILD
+  const backBtn = `[back](../${HomeLinkReplacment})\n\n`;
+  const readmeContent = `${parentPage ? backBtn : ''}# ${readmeObj.name}
 <!-- 
   Do not edit directly, built using contentful-readme-generator.
   Content details in Build Information below.
@@ -199,7 +213,6 @@ ${toc(readmeObj.body.join('')).content}
 ${readmeObj.tableOfContents}
 
 ${readmeObj.body.join('')}`;
-
 
   const html = marked(readmeContent);
   const window = new JSDOM('').window;
@@ -209,5 +222,9 @@ ${readmeObj.body.join('')}`;
   var re = new RegExp(LinkExtensionReplacment,"g");
   readmeObj.html = cleanHtml.replace(re, 'html');
   readmeObj.content = readmeContent.replace(re, 'md');
+
+  var homeRegex = new RegExp(HomeLinkReplacment,"g");
+  readmeObj.html = readmeObj.html.replace(homeRegex, `${config.htmlRootFileName}.html`);
+  readmeObj.content = readmeObj.content.replace(homeRegex, `${config.rootFileName}.md`);
   return readmeObj;
 }

@@ -16,8 +16,6 @@ export default function renderReadmeProject(
     buildState,
     config,
   );
-  compiledPage.url = `${config.rootFileName}.md`;
-  compiledPage.htmlUrl = `${config.htmlRootFileName}.html`;
   buildState.totals.readmePage++;
   buildState.pages.push(compiledPage);
   return compiledPage;
