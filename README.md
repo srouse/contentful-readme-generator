@@ -14,13 +14,10 @@
   * [Table of Contents](#table-of-contents)
   * [Arguments](#arguments)
 - [How To Deploy](#how-to-deploy)
-- [undefined](#undefined)
+- [Summit Rates Central Release 2023-02-03](#summit-rates-central-release-2023-02-03)
 - [Testing](#testing)
-- [Contentful Project Architecture](#contentful-project-architecture)
 - [Summit Rates Central Release History](#summit-rates-central-release-history)
-- [DAM Cover Icon](#dam-cover-icon)
-- [undefined](#undefined-1)
-- [Contentful Project Architecture](#contentful-project-architecture-1)
+- [Contentful Team Overall Projects and Architecture](#contentful-team-overall-projects-and-architecture)
 - [Build Information](#build-information)
 
 ---
@@ -167,7 +164,7 @@ Publish to NPM
 npm publish
 ```
 
-## undefined
+## Summit Rates Central Release 2023-02-03
 - Added "description" to Rates Product
 - Updated environment checking to include Contentful environments that start with "sandbox-rates-central...".
 - Hooked up "edit" state to localStorage state. On refresh the page will keep edit state.
@@ -184,22 +181,22 @@ npm publish
 - Check that the API shows the correct information (referred rate).
 
 
-## Contentful Project Architecture
-[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")[image source](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
-
+[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")
+    
+Contentful Project Architecture, source: [contentful](https://app.contentful.com/spaces/7gg213tt004u/environments/sandbox-readme/entries/5T4EnD0Y9flYOHL7Nokhon), [figma](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
 
 
 ## [Summit Rates Central Release History](./README/summit-rates-central-release-history.md)
 
 
-## DAM Cover Icon
-[![DAM Cover Icon](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png)](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png "View Full Size")[image source](https://www.figma.com/file/fdgg22P6rDRQl3rDWl7RHs/?node-id=205:122)
+[![DAM Cover Icon](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png)](https://images.ctfassets.net/7gg213tt004u/2GB3dUDUIlKQILszHArpiZ/bc3bfe7ff63559d83a5c061c83c6352e/DAM_Cover_Icon.png "View Full Size")
+    
+DAM Cover Icon, source: [contentful](https://app.contentful.com/spaces/7gg213tt004u/environments/sandbox-readme/entries/6nm4A6ovDzBHmvYlchENUt), [figma](https://www.figma.com/file/fdgg22P6rDRQl3rDWl7RHs/?node-id=205:122)
+## Contentful Team Overall Projects and Architecture
 
-## undefined
-
-## Contentful Project Architecture
-[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")[image source](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
-
+[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")
+    
+Contentful Project Architecture, source: [contentful](https://app.contentful.com/spaces/7gg213tt004u/environments/sandbox-readme/entries/5T4EnD0Y9flYOHL7Nokhon), [figma](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
 
 
 ## Build Information
@@ -208,7 +205,7 @@ npm publish
 
 *__updated__: 2/18/2023, 10:37:10 AM*
 
-*__built__: 2/21/2023, 4:57:29 PM*
+*__built__: 3/9/2023, 7:57:26 PM*
 
 *__space__: 7gg213tt004u*
 

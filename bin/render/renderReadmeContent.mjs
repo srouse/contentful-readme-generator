@@ -33,6 +33,12 @@ export default function renderReadmeContent(
     output.push(content);
   }
 
+  if (readmeContent.fields.files) {
+    readmeContent.fields.files.map(file => {
+      output.push(`\n\[${file.fields.title}](https:${file.fields.file.url})\n`);
+    });
+  }
+
   readmeContentType.fields.map(typeField => {
     const content = readmeContent.fields[typeField.id];
 

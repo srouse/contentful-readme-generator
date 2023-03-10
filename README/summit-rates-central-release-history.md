@@ -1,12 +1,13 @@
+[back](../README.md)
+
 # Summit Rates Central Release History
 <!-- 
   Do not edit directly, built using contentful-readme-generator.
   Content details in Build Information below.
 -->
 
-- [undefined](#undefined)
+- [Summit Rates Central Release 2023-02-03](#summit-rates-central-release-2023-02-03)
 - [Testing](#testing)
-- [Contentful Project Architecture](#contentful-project-architecture)
 - [Build Information](#build-information)
 
 ---
@@ -14,7 +15,7 @@
 
 __Title__: Summit Rates Central Release History
 
-## undefined
+## Summit Rates Central Release 2023-02-03
 - Added "description" to Rates Product
 - Updated environment checking to include Contentful environments that start with "sandbox-rates-central...".
 - Hooked up "edit" state to localStorage state. On refresh the page will keep edit state.
@@ -31,9 +32,9 @@ __Title__: Summit Rates Central Release History
 - Check that the API shows the correct information (referred rate).
 
 
-## Contentful Project Architecture
-[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")[image source](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
-
+[![Contentful Project Architecture](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png)](https://images.ctfassets.net/7gg213tt004u/YruBqvflI5J9c3hvDGvKX/d03e62b5a613211904bb7536f4c75b9a/Contentful_Project_Architecture.png "View Full Size")
+    
+Contentful Project Architecture, source: [contentful](https://app.contentful.com/spaces/7gg213tt004u/environments/sandbox-readme/entries/5T4EnD0Y9flYOHL7Nokhon), [figma](https://www.figma.com/file/odipsExhhMLQGFlReq9YnF/?node-id=313:250)
 
 
 ## Build Information
@@ -42,7 +43,7 @@ __Title__: Summit Rates Central Release History
 
 *__updated__: 2/3/2023, 10:20:15 AM*
 
-*__built__: 2/21/2023, 4:56:52 PM*
+*__built__: 3/9/2023, 7:57:26 PM*
 
 *__space__: 7gg213tt004u*
 
