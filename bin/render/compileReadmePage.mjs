@@ -72,6 +72,10 @@ export default function compileReadmePage(
           return;
         }
 
+        if (typeField.id === 'title') {
+          return;// title is mostly for Contentful...
+        }
+
         // gonna do this verbosely for clarity
         if (
           typeField.name.indexOf('# ') === 0 ||
