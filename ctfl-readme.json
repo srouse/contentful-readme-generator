@@ -6,5 +6,5 @@
   "folderName": "README",
   "htmlTemplate": "templates/htmlTemplate.mjs",
   "htmlRootFileName": "index",
-  "htmlDist": "dist-README"
+  "htmlDist": "dist-readme"
 }
