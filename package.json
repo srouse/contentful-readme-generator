@@ -9,7 +9,7 @@
     "ctfl-readme": "./bin/cli.mjs"
   },
   "scripts": {
-    "build:readme": "ctfl-readme build",
+    "build:readme": "./bin/cli.mjs build",
     "help": "ctfl-readme --help"
   },
   "dependencies": {

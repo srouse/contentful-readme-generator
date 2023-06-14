@@ -1,10 +1,10 @@
 {
-  "contentfulSpace": "7gg213tt004u",
-  "contentfulEnvironment": "sandbox-readme",
-  "contentfulEntryId": "6VeYGHMAi2Tsykl9N671JX",
-  "rootFileName": "README",
+  "contentfulSpace": "rtkhko6y3s3u",
+  "contentfulEnvironment": "master",
+  "contentfulEntryId": "2Ox6brgaOxUyE0QDuNOAmH",
+  "rootFileName": "READMEs",
   "folderName": "README",
   "htmlTemplate": "templates/htmlTemplate.mjs",
   "htmlRootFileName": "index",
-  "htmlDist": "dist"
+  "htmlDist": "dist-README"
 }
