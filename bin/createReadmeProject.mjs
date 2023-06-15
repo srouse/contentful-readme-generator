@@ -63,7 +63,7 @@ export default async function createReadmeProject(
   }
 
   if (config.htmlTemplate) {
-    const dir = `${config.htmlDist}`;
+    const dir = `${config.htmlDist}/${config.folderName}`;
     if (!fs.existsSync(dir)){
       fs.mkdirSync(dir, { recursive: true });
     }

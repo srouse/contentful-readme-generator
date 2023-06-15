@@ -47,7 +47,7 @@ export default function compileReadmePage(
   };
   if (parentPage) {
     readmeObj.url = `${config.folderName}/${toKebobCase(name)}.md`;
-    readmeObj.htmlUrl = `${toKebobCase(name)}.html`;
+    readmeObj.htmlUrl = `${config.folderName}/${toKebobCase(name)}.html`;
     // we know that is only a single folder at present...
     // readmeObj.body.push(`[back](../${HomeLinkReplacment})\n\n`);
   }else{
