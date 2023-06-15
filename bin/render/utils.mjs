@@ -77,3 +77,14 @@ export function createContentfulAppLink(
 ) {
   return `https://app.contentful.com/spaces/${config.space}/environments/${config.environment}/entries/${entry.sys.id}`;
 }
+
+function escapeRegExp(strToEscape) {
+  // Escape special characters for use in a regular expression
+  return strToEscape.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+export function trim(origString, charToTrim) {
+  charToTrim = escapeRegExp(charToTrim);
+  var regEx = new RegExp("^[" + charToTrim + "]+|[" + charToTrim + "]+$", "g");
+  return origString.replace(regEx, "");
+}

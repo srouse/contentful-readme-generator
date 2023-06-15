@@ -17,6 +17,7 @@
   * [Headers](#headers)
   * [Table of Contents](#table-of-contents)
   * [Arguments](#arguments)
+- [Page Example](#page-example)
 - [Build Information](#build-information)
 
 ---
@@ -166,13 +167,15 @@ There is only one argument where you can change the destination file name
 ctfl-readme --fileName README-OTHER.md
 ```
 
+## [Page Example](./dist-readme/page-example.md)
+
 ## Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
-*__updated__: 6/14/2023, 3:45:48 PM*
+*__updated__: 6/14/2023, 6:53:52 PM*
 
-*__built__: 6/14/2023, 3:56:19 PM*
+*__built__: 6/14/2023, 7:11:45 PM*
 
 *__space__: rtkhko6y3s3u*
 

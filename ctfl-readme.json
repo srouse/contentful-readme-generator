@@ -2,8 +2,8 @@
   "contentfulSpace": "rtkhko6y3s3u",
   "contentfulEnvironment": "master",
   "contentfulEntryId": "2Ox6brgaOxUyE0QDuNOAmH",
-  "rootFileName": "READMEs",
-  "folderName": "README",
+  "rootFileName": "README",
+  "folderName": "dist-readme",
   "htmlTemplate": "templates/htmlTemplate.mjs",
   "htmlRootFileName": "index",
   "htmlDist": "dist-readme"

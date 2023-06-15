@@ -7,6 +7,7 @@ import {
   isReferenceArray,
   toKebobCase,
   uniqueDefaultName,
+  trim,
 } from './utils.mjs';
 import renderImage from './renderImage.mjs';
 import
@@ -46,7 +47,7 @@ export default function compileReadmePage(
   };
   if (parentPage) {
     readmeObj.url = `${config.folderName}/${toKebobCase(name)}.md`;
-    readmeObj.htmlUrl = `${config.folderName}/${toKebobCase(name)}.html`;
+    readmeObj.htmlUrl = `${toKebobCase(name)}.html`;
     // we know that is only a single folder at present...
     // readmeObj.body.push(`[back](../${HomeLinkReplacment})\n\n`);
   }else{
@@ -208,7 +209,8 @@ ${toc(readmeObj.body.join('')).content}
   }
 
   // FINAL CONTENT BUILD
-  const backBtn = `[back](../${HomeLinkReplacment})\n\n`;
+  const folderNamesSplit = trim(config.folderName, '/').split('/');
+  const backBtn = `[back](${'../'.repeat(folderNamesSplit.length)}${HomeLinkReplacment})\n\n`;
   const readmeContent = `${parentPage ? backBtn : ''}# ${readmeObj.name}
 <!-- 
   Do not edit directly, built using contentful-readme-generator.
