@@ -1,6 +1,6 @@
 {
   "name": "contentful-readme-generator",
-  "version": "0.0.15",
+  "version": "0.0.18",
   "description": "Generate a README.md file from content stored within https://www.contentful.com",
   "main": "index.js",
   "author": "srouse",

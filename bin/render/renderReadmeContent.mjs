@@ -53,13 +53,8 @@ export default function renderReadmeContent(
     }
   });
 
-
-  output.push(
-    `[Contentful Entry](${createContentfulAppLink(readmeContent, config)})`
-  );
-
   buildState.totals.readmeContent++;
-  return `${output.join('\n')}\n\n`;
+  return `${output.join('\n')}\n[&#9998; edit](${createContentfulAppLink(readmeContent, config)})\n\n`;
 }
 
 

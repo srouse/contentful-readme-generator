@@ -78,7 +78,7 @@ CTFL_README_CONTENTFUL_ACCESS_TOKEN=[Your Access Token Id]
 yarn ctfl-readme
 ```
 
-[Contentful Entry](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw)
+[&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw)
 
 ## Contentful Content
 ### Build your Content Type
@@ -167,7 +167,7 @@ There is only one argument where you can change the destination file name
 ```
 ctfl-readme --fileName README-OTHER.md
 ```
-[Contentful Entry](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa)
+[&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa)
 
 ## [Page Example](./dist-readme/page-example.md)
 
@@ -177,7 +177,7 @@ ctfl-readme --fileName README-OTHER.md
 
 *__updated__: 6/14/2023, 6:53:52 PM*
 
-*__built__: 6/16/2023, 9:41:30 AM*
+*__built__: 6/16/2023, 9:58:53 AM*
 
 *__space__: rtkhko6y3s3u*
 
@@ -185,4 +185,4 @@ ctfl-readme --fileName README-OTHER.md
 
 *__entity id__: 2Ox6brgaOxUyE0QDuNOAmH*
 
-[Contentful Entry](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Ox6brgaOxUyE0QDuNOAmH)
+[&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Ox6brgaOxUyE0QDuNOAmH)
