@@ -198,7 +198,7 @@ export default function compileReadmePage(
 
 *__entity id__: ${contentObj.sys.id}*
 
-[Edit Contentful Entry](${createContentfulAppLink(contentObj, config)})`);
+[Contentful Entry](${createContentfulAppLink(contentObj, config)})`);
 
   if (doTableOfContents) {
     readmeObj.tableOfContents = `
