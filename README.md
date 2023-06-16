@@ -18,6 +18,7 @@
   * [Table of Contents](#table-of-contents)
   * [Arguments](#arguments)
 - [Page Example](#page-example)
+- [Figma Design System Widget](#figma-design-system-widget)
 - [Build Information](#build-information)
 
 ---
@@ -77,6 +78,7 @@ CTFL_README_CONTENTFUL_ACCESS_TOKEN=[Your Access Token Id]
 ```
 yarn ctfl-readme
 ```
+
 
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw)
 
@@ -167,17 +169,20 @@ There is only one argument where you can change the destination file name
 ```
 ctfl-readme --fileName README-OTHER.md
 ```
+
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa)
 
 ## [Page Example](./dist-readme/page-example.md)
+
+## [Figma Design System Widget](./dist-readme/figma-design-system-widget.md)
 
 ## Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
-*__updated__: 6/14/2023, 6:53:52 PM*
+*__updated__: 6/16/2023, 1:25:07 PM*
 
-*__built__: 6/16/2023, 9:58:53 AM*
+*__built__: 6/16/2023, 1:25:15 PM*
 
 *__space__: rtkhko6y3s3u*
 

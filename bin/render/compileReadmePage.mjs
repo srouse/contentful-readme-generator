@@ -145,7 +145,10 @@ export default function compileReadmePage(
       }
 
       // ARRAY OF REFERENCES
-      if (isReferenceArray(typeField, ['readmeContent', 'readmePage', 'image'])) {
+      if (isReferenceArray(
+        typeField,
+        ['readmeProject', 'readmeContent', 'readmePage', 'image']
+      )) {
         content.map(contentEntry => {
           const contentType = contentEntry.sys.contentType.sys.id;
           if (contentType === 'image') {
@@ -163,7 +166,10 @@ export default function compileReadmePage(
               )
             );
           }
-          if (contentType === 'readmePage') {
+          if (
+            contentType === 'readmePage' ||
+            contentType === 'readmeProject'
+          ) {
             readmeObj.body.push(
               renderReadmePage(
                 contentEntry,
@@ -228,6 +234,8 @@ ${readmeObj.body.join('')}`;
 
   var re = new RegExp(LinkExtensionReplacment,"g");
   readmeObj.html = cleanHtml.replace(re, 'html');
+  // all external links should open in new tab
+  readmeObj.html = readmeObj.html.replace(/href="https/g, 'target="_blank" href="https');
   readmeObj.content = readmeContent.replace(re, 'md');
 
   var homeRegex = new RegExp(HomeLinkReplacment,"g");

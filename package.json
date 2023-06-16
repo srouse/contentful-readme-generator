@@ -1,6 +1,6 @@
 {
   "name": "contentful-readme-generator",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Generate a README.md file from content stored within https://www.contentful.com",
   "main": "index.js",
   "author": "srouse",
@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build:readme": "./bin/cli.mjs build",
+    "start:readme": "yarn build:readme && http-server ./dist-readme",
     "help": "ctfl-readme --help"
   },
   "dependencies": {
