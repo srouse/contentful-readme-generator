@@ -189,14 +189,11 @@ export default function compileReadmePage(
   // footer
   // every entry has a sys...
   const updatedDate = new Date(contentObj.sys.updatedAt);
-  const buildDate = new Date();
   readmeObj.body.push(`## Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
 *__updated__: ${updatedDate.toLocaleString()}*
-
-*__built__: ${buildDate.toLocaleString()}*
 
 *__space__: ${config.space}*
 

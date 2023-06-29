@@ -17,8 +17,8 @@
   * [Headers](#headers)
   * [Table of Contents](#table-of-contents)
   * [Arguments](#arguments)
-- [Page Example](#page-example)
-- [Figma Design System Widget](#figma-design-system-widget)
+- [Page Example &#10138;](#page-example-%2310138)
+- [Figma Design System Widget &#10138;](#figma-design-system-widget-%2310138)
 - [Build Information](#build-information)
 
 ---
@@ -172,17 +172,15 @@ ctfl-readme --fileName README-OTHER.md
 
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa)
 
-## [Page Example](./dist-readme/page-example.md)
+## [Page Example &#10138;](./dist-readme/page-example.md)
 
-## [Figma Design System Widget](./dist-readme/figma-design-system-widget.md)
+## [Figma Design System Widget &#10138;](./dist-readme/figma-design-system-widget.md)
 
 ## Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
 *__updated__: 6/16/2023, 1:25:07 PM*
-
-*__built__: 6/16/2023, 1:25:15 PM*
 
 *__space__: rtkhko6y3s3u*
 

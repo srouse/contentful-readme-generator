@@ -29,7 +29,7 @@ export default function renderReadmePage(
   }
 
   const name = page.fields.name || uniqueDefaultName();
-  return `## [${name}](./${config.folderName}/${toKebobCase(name)}.${
+  return `## [${name} &#10138;](./${config.folderName}/${toKebobCase(name)}.${
     LinkExtensionReplacment
   })\n\n`;
 }
