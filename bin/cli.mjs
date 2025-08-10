@@ -30,6 +30,7 @@ yargs(hideBin(process.argv))
       let htmlRootFileName = 'README';
       let htmlDist = 'dist';
       
+      const children = [];
       if (ctflReadmeJsonRaw) {
         const ctflReadmeJson = JSON.parse(ctflReadmeJsonRaw);
         if ( ctflReadmeJson.contentfulSpace ) 
@@ -48,6 +49,22 @@ yargs(hideBin(process.argv))
           htmlRootFileName = ctflReadmeJson.htmlRootFileName;
         if ( ctflReadmeJson.htmlDist ) 
           htmlDist = ctflReadmeJson.htmlDist;
+        if ( ctflReadmeJson.children ) {
+          
+          for ( const child of ctflReadmeJson.children ) {
+            const childFolder = child.childFolder?.replace(/\/+$/, '');
+            children.push({
+              space: space,
+              environment: environment,
+              entryId: child.contentfulEntryId, // child entry id
+              rootFileName:  `${childFolder}/${rootFileName}`,
+              folderName: `${childFolder}/${folderName}`,
+              // htmlTemplate: `${childFolder}/${htmlTemplate}`,
+              htmlRootFileName: `${childFolder}/${htmlRootFileName}`,
+              htmlDist: `${childFolder}/${htmlDist}`,
+            });
+          }
+        }
       }
 
       if (!space || !environment || !entryId) {
@@ -69,9 +86,18 @@ yargs(hideBin(process.argv))
       const client = contentful.createClient(config);
 
       try {
+        
         await createReadmeProject(
           client, entryId, config,
         );
+        log(chalk.bgGreen(`Main Project Done: ${entryId}`));
+
+        for ( const child of children ) {
+          await createReadmeProject(
+            client, child.entryId, child,
+          );
+          log(chalk.bgGreen(`Child Project Done: ${child.entryId}`));
+        }
 
         log(chalk.green('Contentful Readme Generator done.'));
       }catch(err) {
