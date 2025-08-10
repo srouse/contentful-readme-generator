@@ -10,6 +10,7 @@ export default function renderReadmeContent(
   readmeContentType,
   buildState,
   config,
+  depth = 2
 ) {
   const output = [];
 
@@ -22,7 +23,7 @@ export default function renderReadmeContent(
     header = readmeContent.fields.title;
   }
   output.push(
-    `## ${header}`
+    `${'#'.repeat(depth)} ${header}`
   );
 
   if (readmeContent.fields.content) {
@@ -53,11 +54,11 @@ export default function renderReadmeContent(
     }
 
     if (isReference(typeField, 'readmeContent')) {
-      output.push(renderReadmeContent(content, readmeContentType, buildState, config));
+      output.push(renderReadmeContent(content, readmeContentType, buildState, config, depth + 1));
     }
     if (isReferenceArray(typeField, ['readmeContent'])) {
       content?.map(readmeContent => {
-        output.push(renderReadmeContent(readmeContent, readmeContentType, buildState, config));
+        output.push(renderReadmeContent(readmeContent, readmeContentType, buildState, config, depth + 1));
       });
     }
   });

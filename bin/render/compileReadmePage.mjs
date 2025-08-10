@@ -206,7 +206,9 @@ export default function compileReadmePage(
 
   if (doTableOfContents) {
     readmeObj.tableOfContents = `
-${toc(readmeObj.body.join('')).content}
+${toc(readmeObj.body.join(''), {
+  maxdepth: 2,
+}).content}
 
 ---
 `
