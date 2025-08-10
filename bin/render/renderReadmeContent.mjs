@@ -51,6 +51,15 @@ export default function renderReadmeContent(
         output.push(renderImage(image, config));
       });
     }
+
+    if (isReference(typeField, 'readmeContent')) {
+      output.push(renderReadmeContent(content, readmeContentType, buildState, config));
+    }
+    if (isReferenceArray(typeField, ['readmeContent'])) {
+      content?.map(readmeContent => {
+        output.push(renderReadmeContent(readmeContent, readmeContentType, buildState, config));
+      });
+    }
   });
 
   buildState.totals.readmeContent++;

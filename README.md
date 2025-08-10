@@ -7,8 +7,10 @@
 - [Description](#description)
 - [Readme Install](#readme-install)
   * [To install](#to-install)
+- [Variables](#variables)
+  * [Base .env file](#base-env-file)
   * [Create a .env file in your project](#create-a-env-file-in-your-project)
-  * [Setup Local Configuration *](#setup-local-configuration-)
+  * [Setup Local Configuration](#setup-local-configuration)
   * [build](#build)
 - [Contentful Content](#contentful-content)
   * [Build your Content Type](#build-your-content-type)
@@ -43,21 +45,34 @@ This is a service that loads a Contentful entry and renders it as a README file 
 ### To install
 
 ```
-yarn add contentful-readme-generator
+npm add contentful-readme-generator
+```
+
+## Variables
+
+You can set up a .env file or a configuration file that can be checked in (and establish child README projects for monorepos)
+
+### Base .env file
+
+```
+# CTFL README
+CTFL_README_CONTENTFUL_ACCESS_TOKEN=[CDA Access Key]
 ```
 
 ### Create a .env file in your project
 
 ```
 # CTFL README
+CTFL_README_CONTENTFUL_ACCESS_TOKEN=[Your Access Token Id]
+
+# SPACE CONFIG
 CTFL_README_CONTENTFUL_SPACE=[Your Space Id *]
 CTFL_README_CONTENTFUL_ENVIRONMENT=[Your Environment Id *]
 CTFL_README_CONTENTFUL_ENTRY_ID=[Your Entry Id *]
-CTFL_README_CONTENTFUL_ACCESS_TOKEN=[Your Access Token Id]
 ```
 
-### Setup Local Configuration *
-* The .env variables are not necessary if using a configuration file.
+### Setup Local Configuration
+Alternative Space configuration. Children allow you to inject READMEs into sub-projects. They only accept contentfulEntryId and childFolder. They will generate READMEs accross an entire monorepo.j
 
 ```
 // ctfl-readme.json
@@ -69,14 +84,26 @@ CTFL_README_CONTENTFUL_ACCESS_TOKEN=[Your Access Token Id]
   "folderName": "README",
   "htmlTemplate": "templates/htmlTemplate.mjs",
   "htmlRootFileName": "index",
-  "htmlDist": "dist"
+  "htmlDist": "dist",
+  "children": [
+        {
+            "name": "App A",
+            "contentfulEntryId": "[Child A Entry Id]",
+            "childFolder": "apps/app-a/"
+        },
+        {
+            "name": "App B",
+            "contentfulEntryId": "[Child B Entry Id]",
+            "childFolder": "apps/app-b/"
+        }
+    ]
 }
 ```
 
 ### build
 
 ```
-yarn ctfl-readme
+npx ctfl-readme build
 ```
 
 

@@ -59,7 +59,7 @@ yargs(hideBin(process.argv))
               entryId: child.contentfulEntryId, // child entry id
               rootFileName:  `${childFolder}/${rootFileName}`,
               folderName: `${childFolder}/${folderName}`,
-              // htmlTemplate: `${childFolder}/${htmlTemplate}`,
+              htmlTemplate: htmlTemplate,
               htmlRootFileName: `${childFolder}/${htmlRootFileName}`,
               htmlDist: `${childFolder}/${htmlDist}`,
             });
