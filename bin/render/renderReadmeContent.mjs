@@ -1,5 +1,6 @@
 import {
   createContentfulAppLink,
+  createContentfulAssetLink,
   isReference,
   isReferenceArray,
 } from './utils.mjs';
@@ -38,6 +39,13 @@ export default function renderReadmeContent(
   if (readmeContent.fields.files) {
     readmeContent.fields.files.map(file => {
       output.push(`\n\[${file.fields.title}](https:${file.fields.file.url})\n`);
+    });
+  }
+
+  if (readmeContent.fields.videos) {
+    readmeContent.fields.videos.map(video => {
+      output.push(`\n<video style="width: 100%; height: auto;" src="${video.fields.file.url}" controls></video>\n`);
+      output.push(`\n[🖼️ edit](${createContentfulAssetLink(video, config)})`);
     });
   }
 

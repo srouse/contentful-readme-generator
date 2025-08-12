@@ -78,6 +78,12 @@ export function createContentfulAppLink(
   return `https://app.contentful.com/spaces/${config.space}/environments/${config.environment}/entries/${entry.sys.id}`;
 }
 
+export function createContentfulAssetLink(
+  asset, config
+) {
+  return `https://app.contentful.com/spaces/${config.space}/environments/${config.environment}/assets/${asset.sys.id}`;
+}
+
 function escapeRegExp(strToEscape) {
   // Escape special characters for use in a regular expression
   return strToEscape.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");

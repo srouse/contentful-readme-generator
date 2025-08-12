@@ -120,6 +120,11 @@ npx ctfl-readme build
 ```
 
 
+<video style="width: 100%; height: auto;" src="//videos.ctfassets.net/rtkhko6y3s3u/pKMbNAg7UOrALaSlkGuTi/bbe4de0f909b5d837d873fcec28795eb/No_name_-_12_August_2025.mp4" controls></video>
+
+
+[🖼️ edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/assets/pKMbNAg7UOrALaSlkGuTi)
+
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw)
 
 ## Contentful Content
