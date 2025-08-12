@@ -1,11 +1,11 @@
 import {
   toKebobCase, uniqueDefaultName,
 } from './utils.mjs';
-import compileReadmePage from './compileReadmePage.mjs';
+import compileReadmePage, { DIST_FOLDER, LINK_EXTENSION } from './compileReadmePage.mjs';
 
 // Just trying to stay away from potential real content
-export const LinkExtensionReplacment = '23409283423234_LINK_EXTENSION_23423425';
-export const HomeLinkReplacment = '23409283423234_HOME_LINK_23423425';
+// export const LinkExtensionReplacment = '23409283423234_LINK_EXTENSION_23423425';
+// export const HomeLinkReplacment = '23409283423234_HOME_LINK_23423425';
 
 export default function renderReadmePage(
   page,
@@ -29,7 +29,7 @@ export default function renderReadmePage(
   }
 
   const name = page.fields.name || uniqueDefaultName();
-  return `## ${name}\n\n[${name} &#8599;](./${config.folderName}/${toKebobCase(name)}.${
-    LinkExtensionReplacment
+  return `## ${name}\n\n[${name} &#8599;](./${DIST_FOLDER}/${toKebobCase(name)}.${
+    LINK_EXTENSION
   })\n\n`;
 }

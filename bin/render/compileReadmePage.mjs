@@ -7,18 +7,23 @@ import {
   isReferenceArray,
   toKebobCase,
   uniqueDefaultName,
-  trim,
 } from './utils.mjs';
 import renderImage from './renderImage.mjs';
 import
   renderReadmePage,
   {
-    HomeLinkReplacment,
-    LinkExtensionReplacment
+    // HomeLinkReplacment,
+    // LinkExtensionReplacment
 } from './renderReadmePage.mjs';
 import { marked } from 'marked';
 import { JSDOM } from 'jsdom';
 import dompurify from 'dompurify';
+import path from 'path';
+
+export const DIST_FOLDER = '__##_DIST_FOLDER_9c8b2b87f3##__';
+export const HOME_LINK = '__##_HOME_LINK_9c8b2b87f3##__';
+export const PARENT_LINK = '__##_PARENT_LINK_9c8b2b87f3##__';
+export const LINK_EXTENSION = '__##_LINK_EXTENSION_9c8b2b87f3##__';
 
 export default function compileReadmePage(
   contentObj,
@@ -47,9 +52,7 @@ export default function compileReadmePage(
   };
   if (parentPage) {
     readmeObj.url = `${config.folderName}/${toKebobCase(name)}.md`;
-    readmeObj.htmlUrl = `${config.folderName}/${toKebobCase(name)}.html`;
-    // we know that is only a single folder at present...
-    // readmeObj.body.push(`[back](../${HomeLinkReplacment})\n\n`);
+    readmeObj.htmlUrl = `${config.htmlDist}/${toKebobCase(name)}.html`;
   }else{
     readmeObj.url = `${config.rootFileName}.md`;
     readmeObj.htmlUrl = `${config.htmlRootFileName}.html`;
@@ -215,9 +218,8 @@ ${toc(readmeObj.body.join(''), {
   }
 
   // FINAL CONTENT BUILD
-  const folderNamesSplit = trim(config.folderName, '/').split('/');
-  const backBtn = `[back](${'../'.repeat(folderNamesSplit.length)}${HomeLinkReplacment})\n\n`;
-  const readmeContent = `${parentPage ? backBtn : ''}# ${readmeObj.name}
+  const homeBtn = `[home](${HOME_LINK})\n\n`;
+  const readmeContent = `${parentPage ? homeBtn : ''}# ${readmeObj.name}
 <!-- 
   Do not edit directly, built using contentful-readme-generator.
   Content details in Build Information below.
@@ -231,14 +233,26 @@ ${readmeObj.body.join('')}`;
   const purify = dompurify(window);
   const cleanHtml = purify.sanitize(html);
 
-  var re = new RegExp(LinkExtensionReplacment,"g");
-  readmeObj.html = cleanHtml.replace(re, 'html');
-  // all external links should open in new tab
-  readmeObj.html = readmeObj.html.replace(/href="https/g, 'target="_blank" href="https');
-  readmeObj.content = readmeContent.replace(re, 'md');
+  readmeObj.html = cleanHtml;
+  readmeObj.content = readmeContent;
 
-  var homeRegex = new RegExp(HomeLinkReplacment,"g");
-  readmeObj.html = readmeObj.html.replace(homeRegex, `${config.htmlRootFileName}.html`);
-  readmeObj.content = readmeObj.content.replace(homeRegex, `${config.rootFileName}.md`);
+  // REPLACEMENTS
+  var linkRegEx = new RegExp(LINK_EXTENSION,"g");
+  readmeObj.html = cleanHtml.replace(linkRegEx, 'html');
+  readmeObj.html = readmeObj.html.replace(/href="https/g, 'target="_blank" href="https');
+  readmeObj.content = readmeObj.content.replace(linkRegEx, 'md');
+
+  var distFolderRegEx = new RegExp(DIST_FOLDER,"g");
+  const relativeHtmlLink = path.dirname(path.relative(path.dirname(readmeObj.htmlUrl), `${config.htmlDist}/index.html` ));
+  readmeObj.html = readmeObj.html.replace(distFolderRegEx, `${relativeHtmlLink}`);
+  const relativeMdLink = path.dirname(path.relative(path.dirname(readmeObj.url), `${config.folderName}/index.md` ));
+  readmeObj.content = readmeObj.content.replace(distFolderRegEx, `${relativeMdLink}`);
+
+  var homeRegex = new RegExp(HOME_LINK,"g");
+  const relativeHomeHtmlLink = path.relative(path.dirname(readmeObj.htmlUrl), `${config.htmlRootFileName}.html` );
+  readmeObj.html = readmeObj.html.replace(homeRegex, relativeHomeHtmlLink);
+  const relativeHomeMdLink = path.relative(path.dirname(readmeObj.url), `${config.rootFileName}.md` );
+  readmeObj.content = readmeObj.content.replace(homeRegex, relativeHomeMdLink);
+
   return readmeObj;
 }

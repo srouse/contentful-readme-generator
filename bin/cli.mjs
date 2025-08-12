@@ -6,6 +6,7 @@ import 'dotenv/config';
 import { promises as fs } from 'fs';
 import chalk from 'chalk';
 import createReadmeProject from './createReadmeProject.mjs';
+import renderHTML from './render/htmlTemplate.mjs';
 
 const log = console.log;
 
@@ -26,7 +27,7 @@ yargs(hideBin(process.argv))
       let entryId = process.env.CTFL_README_CONTENTFUL_ENTRY_ID;
       let rootFileName = 'README';
       let folderName = 'README';
-      let htmlTemplate = '';
+      let htmlTemplate = renderHTML;
       let htmlRootFileName = 'README';
       let htmlDist = 'dist';
       
@@ -49,20 +50,29 @@ yargs(hideBin(process.argv))
           htmlRootFileName = ctflReadmeJson.htmlRootFileName;
         if ( ctflReadmeJson.htmlDist ) 
           htmlDist = ctflReadmeJson.htmlDist;
+
+        const distConfig = processDistConfig(
+          {rootFileName, folderName, htmlRootFileName, htmlDist},
+          ctflReadmeJson
+        );
+        rootFileName = distConfig.rootFileName;
+        folderName = distConfig.folderName;
+        htmlRootFileName = distConfig.htmlRootFileName;
+        htmlDist = distConfig.htmlDist;
+
         if ( ctflReadmeJson.children ) {
-          
           for ( const child of ctflReadmeJson.children ) {
-            const childFolder = child.childFolder?.replace(/\/+$/, '');
-            children.push({
+            const childConfig = {
               space: space,
               environment: environment,
-              entryId: child.contentfulEntryId, // child entry id
-              rootFileName:  `${childFolder}/${rootFileName}`,
-              folderName: `${childFolder}/${folderName}`,
+              entryId: child.contentfulEntryId,
               htmlTemplate: htmlTemplate,
-              htmlRootFileName: `${childFolder}/${htmlRootFileName}`,
-              htmlDist: `${childFolder}/${htmlDist}`,
-            });
+              ...processDistConfig(
+                child,
+                child
+              ),
+            };
+            children.push(childConfig);
           }
         }
       }
@@ -106,3 +116,37 @@ yargs(hideBin(process.argv))
     })
   .help()
   .argv
+
+
+function processDistConfig({rootFileName, folderName, htmlRootFileName, htmlDist}, ctflReadmeJson) {
+  let newRootFileName = rootFileName;
+  let newFolderName = folderName;
+  let newHtmlRootFileName = htmlRootFileName;
+  let newHtmlDist = htmlDist;
+
+  if ( ctflReadmeJson.dist ) {
+    if (ctflReadmeJson.dist.markdown) {
+      if (ctflReadmeJson.dist.markdown.folder) {
+        newFolderName = ctflReadmeJson.dist.markdown.folder;
+      }
+      if (ctflReadmeJson.dist.markdown.index) {
+        newRootFileName = ctflReadmeJson.dist.markdown.index;
+      }
+    }
+    if (ctflReadmeJson.dist.html) {
+      if (ctflReadmeJson.dist.html.folder) {
+        newHtmlDist = ctflReadmeJson.dist.html.folder;
+      }
+      if (ctflReadmeJson.dist.html.index) {
+        newHtmlRootFileName = ctflReadmeJson.dist.html.index;
+      }
+    }
+  }
+
+  return {
+    rootFileName: newRootFileName,
+    folderName: newFolderName,
+    htmlRootFileName: newHtmlRootFileName,
+    htmlDist: newHtmlDist,
+  };
+}
