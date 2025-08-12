@@ -6,21 +6,10 @@
 
 - [Description](#description)
 - [Readme Install](#readme-install)
-  * [To install](#to-install)
 - [Variables](#variables)
-  * [Base .env file](#base-env-file)
-  * [Create a .env file in your project](#create-a-env-file-in-your-project)
-  * [Setup Local Configuration](#setup-local-configuration)
-  * [build](#build)
 - [Contentful Content](#contentful-content)
-  * [Build your Content Type](#build-your-content-type)
-  * [What Does NOT work as well](#what-does-not-work-as-well)
-  * [Badges](#badges)
-  * [Headers](#headers)
-  * [Table of Contents](#table-of-contents)
-  * [Arguments](#arguments)
-- [Page Example &#10138;](#page-example-%2310138)
-- [Figma Design System Widget &#10138;](#figma-design-system-widget-%2310138)
+- [Page Example](#page-example)
+- [Figma Design System Widget](#figma-design-system-widget)
 - [Build Information](#build-information)
 
 ---
@@ -80,21 +69,45 @@ Alternative Space configuration. Children allow you to inject READMEs into sub-p
   "contentfulSpace": "[Your Space Id]",
   "contentfulEnvironment": "[Your Env]",
   "contentfulEntryId": "[Your Entry Id]",
-  "rootFilename": "README",
-  "folderName": "README",
   "htmlTemplate": "templates/htmlTemplate.mjs",
-  "htmlRootFileName": "index",
-  "htmlDist": "dist",
+  "dist": {
+        "markdown": {
+            "folder": "README/md",
+            "index": "README"
+        },
+        "html": {
+            "folder": "README/html",
+            "index": "README/index"
+        }
+    },
   "children": [
         {
             "name": "App A",
             "contentfulEntryId": "[Child A Entry Id]",
-            "childFolder": "apps/app-a/"
+            "dist": {
+                "markdown": {
+                    "folder": "apps/app-a/README/md",
+                    "index": "apps/app-a/README"
+                },
+                "html": {
+                    "folder": "apps/app-a/README/html",
+                    "index": "apps/app-a/README/index"
+                }
+            }
         },
         {
             "name": "App B",
             "contentfulEntryId": "[Child B Entry Id]",
-            "childFolder": "apps/app-b/"
+            "dist": {
+                "markdown": {
+                    "folder": "apps/app-b/README/md",
+                    "index": "apps/app-b/README"
+                },
+                "html": {
+                    "folder": "apps/app-b/README/html",
+                    "index": "apps/app-b/README/index"
+                }
+            }
         }
     ]
 }
@@ -199,9 +212,13 @@ ctfl-readme --fileName README-OTHER.md
 
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa)
 
-## [Page Example &#10138;](./dist-readme/page-example.md)
+## Page Example
 
-## [Figma Design System Widget &#10138;](./dist-readme/figma-design-system-widget.md)
+[Page Example &#8599;](./README/md/page-example.md)
+
+## Figma Design System Widget
+
+[Figma Design System Widget &#8599;](./README/md/figma-design-system-widget.md)
 
 ## Build Information
 

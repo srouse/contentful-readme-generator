@@ -2,9 +2,14 @@
   "contentfulSpace": "rtkhko6y3s3u",
   "contentfulEnvironment": "master",
   "contentfulEntryId": "2Ox6brgaOxUyE0QDuNOAmH",
-  "rootFileName": "README",
-  "folderName": "dist-readme",
-  "htmlTemplate": "templates/htmlTemplate.mjs",
-  "htmlRootFileName": "index",
-  "htmlDist": "dist-readme"
+  "dist": {
+    "markdown": {
+        "folder": "README/md",
+        "index": "README"
+    },
+    "html": {
+        "folder": "README/html",
+        "index": "README/index"
+    }
+}
 }
