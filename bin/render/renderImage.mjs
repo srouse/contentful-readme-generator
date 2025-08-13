@@ -25,12 +25,12 @@ export default function renderImage(
     }
 
     let sourceLinks = [];
-    sourceLinks.push(`[contentful](${createContentfulAppLink(image, config)})`);
+    sourceLinks.push(`[&#9998; contentful](${createContentfulAppLink(image, config)})`);
     if (
       image.fields.figmaFileId &&
       image.fields.figmaNodeId
     ) {
-      sourceLinks.push(`[figma](https://www.figma.com/file/${
+      sourceLinks.push(`[&#9998; figma](https://www.figma.com/file/${
         image.fields.figmaFileId
       }/?node-id=${
         image.fields.figmaNodeId
@@ -38,8 +38,8 @@ export default function renderImage(
     }
     const imgUrl = `https:${image.fields.asset.fields.file.url}`;
 
-    return `\n[![${image.fields.title}](${imgUrl})](${imgUrl} "View Full Size")
-    \n${image.fields.title}, source: ${sourceLinks.join(', ')}\n`;
+    return `\n[![${image.fields.title}](${imgUrl})](${imgUrl} "${image.fields.title ? `${image.fields.title} - ` : ''}View Full Size")
+    \n${sourceLinks.join(' ')}\n`;
   }
   return '';
 }

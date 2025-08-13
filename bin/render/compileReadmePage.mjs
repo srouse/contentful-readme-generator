@@ -192,7 +192,8 @@ export default function compileReadmePage(
   // footer
   // every entry has a sys...
   const updatedDate = new Date(contentObj.sys.updatedAt);
-  readmeObj.body.push(`## Build Information
+  readmeObj.body.push(`<div class="build-information">
+Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
@@ -203,6 +204,8 @@ export default function compileReadmePage(
 *__environment__: ${config.environment}*
 
 *__entity id__: ${contentObj.sys.id}*
+
+</div>
 
 [&#9998; edit](${createContentfulAppLink(contentObj, config)})
 `);
@@ -240,6 +243,22 @@ ${readmeObj.body.join('')}`;
   var linkRegEx = new RegExp(LINK_EXTENSION,"g");
   readmeObj.html = cleanHtml.replace(linkRegEx, 'html');
   readmeObj.html = readmeObj.html.replace(/href="https/g, 'target="_blank" href="https');
+  readmeObj.html = readmeObj.html.replace(
+    /(<a\b[^>]*)(?=>✎ edit)/g,
+    '$1 class="edit-link"'
+  );
+  readmeObj.html = readmeObj.html.replace(
+    /(<a\b[^>]*)(?=>✎ video edit)/g,
+    '$1 class="edit-link"'
+  );
+  readmeObj.html = readmeObj.html.replace(
+    /(<a\b[^>]*)(?=>✎ contentful)/g,
+    '$1 class="edit-link"'
+  );
+  readmeObj.html = readmeObj.html.replace(
+    /(<a\b[^>]*)(?=>✎ figma)/g,
+    '$1 class="edit-link"'
+  );
   readmeObj.content = readmeObj.content.replace(linkRegEx, 'md');
 
   var distFolderRegEx = new RegExp(DIST_FOLDER,"g");

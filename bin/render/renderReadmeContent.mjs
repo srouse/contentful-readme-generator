@@ -45,7 +45,7 @@ export default function renderReadmeContent(
   if (readmeContent.fields.videos) {
     readmeContent.fields.videos.map(video => {
       output.push(`\n<video style="width: 100%; height: auto;" src="${video.fields.file.url}" controls></video>\n`);
-      output.push(`\n[🖼️ edit](${createContentfulAssetLink(video, config)})`);
+      output.push(`\n[&#9998; video edit](${createContentfulAssetLink(video, config)})`);
     });
   }
 

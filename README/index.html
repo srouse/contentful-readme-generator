@@ -1518,6 +1518,21 @@
             --color-accent-fg: #f00;
           }
 
+          .markdown-body .edit-link {
+            font-size: 11px;
+            color: #aaa;
+            margin: 0px;
+          }
+
+          .markdown-body .build-information {
+            font-size: 11px;
+            color: #aaa;
+          }
+
+          .markdown-body .build-information * {
+            margin: 0px;
+          }
+
           h2, h3, h4 {
             margin-top: 30px;
           }
@@ -1534,7 +1549,6 @@
 <li><a href="#contentful-content">Contentful Content</a></li>
 <li><a href="#page-example">Page Example</a></li>
 <li><a href="#figma-design-system-widget">Figma Design System Widget</a></li>
-<li><a href="#build-information">Build Information</a></li>
 </ul>
 <hr>
 <p><strong>Project Abbreviation</strong>: RDME</p>
@@ -1617,9 +1631,7 @@ CTFL_README_CONTENTFUL_ENTRY_ID=[Your Entry Id *]
 <h3 id="build">build</h3>
 <pre><code>npx ctfl-readme build
 </code></pre>
-<p><video controls="" src="//videos.ctfassets.net/rtkhko6y3s3u/pKMbNAg7UOrALaSlkGuTi/bbe4de0f909b5d837d873fcec28795eb/No_name_-_12_August_2025.mp4" style="width: 100%; height: auto;"></video></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/assets/pKMbNAg7UOrALaSlkGuTi">🖼️ edit</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw">✎ edit</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw" class="edit-link">✎ edit</a></p>
 <h2 id="contentful-content">Contentful Content</h2>
 <h3 id="build-your-content-type">Build your Content Type</h3>
 <p>There is no specific structure needed to build a readme file, but there are limitations. For instance, ctfl-readme will try to render out whatever you put into your Entry, but text and markdown (large text) are ideal. A simple, but effective example would be:</p>
@@ -1690,18 +1702,22 @@ CTFL_README_CONTENTFUL_ENTRY_ID=[Your Entry Id *]
 <p>There is only one argument where you can change the destination file name</p>
 <pre><code>ctfl-readme --fileName README-OTHER.md
 </code></pre>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa">✎ edit</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa" class="edit-link">✎ edit</a></p>
 <h2 id="page-example">Page Example</h2>
 <p><a href="./html/page-example.html">Page Example ↗</a></p>
 <h2 id="figma-design-system-widget">Figma Design System Widget</h2>
 <p><a href="./html/figma-design-system-widget.html">Figma Design System Widget ↗</a></p>
-<h2 id="build-information">Build Information</h2>
+<div class="build-information">
+Build Information
+
 <p><em>Dynamically built using contentful-readme-generator. Do not edit directly.</em></p>
 <p><em><strong>updated</strong>: 6/16/2023, 1:25:07 PM</em></p>
 <p><em><strong>space</strong>: rtkhko6y3s3u</em></p>
 <p><em><strong>environment</strong>: master</em></p>
 <p><em><strong>entity id</strong>: 2Ox6brgaOxUyE0QDuNOAmH</em></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Ox6brgaOxUyE0QDuNOAmH">✎ edit</a></p>
+</div>
+
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Ox6brgaOxUyE0QDuNOAmH" class="edit-link">✎ edit</a></p>
 
       </body>
     </html>

@@ -1518,6 +1518,21 @@
             --color-accent-fg: #f00;
           }
 
+          .markdown-body .edit-link {
+            font-size: 11px;
+            color: #aaa;
+            margin: 0px;
+          }
+
+          .markdown-body .build-information {
+            font-size: 11px;
+            color: #aaa;
+          }
+
+          .markdown-body .build-information * {
+            margin: 0px;
+          }
+
           h2, h3, h4 {
             margin-top: 30px;
           }
@@ -1543,15 +1558,14 @@
 <li><a href="#github-configuration">Github Configuration</a></li>
 <li><a href="#style-guide">Style Guide</a></li>
 <li><a href="#design-system-lifecycle">Design System Lifecycle</a></li>
-<li><a href="#build-information">Build Information</a></li>
 </ul>
 <hr>
 <h2 id="figma-design-system-widget-1">Figma Design System Widget</h2>
 <p>Figma Design System Widget is an attempt to integrate design system concerns (ADA, color/typography sets) with Figma structures (styles, components) as well as explore how much of a design system build tool can be created entirely within Figma leveraging existing services (Font Awesome, Google Fonts, Github repos/npm packaging).</p>
 <p>This widget can build a significantly sized design system token set by dragging the widget on stage, choosing a name and building out the various parts of your system. From there, you can tokenize, transform (css, scss, Javascript, and Typescript), and deploy your design system all the way into a Github hosted NPM Package. It isn't designed to be used for large production designs systems quite yet, but is perfect for small to medium sized projects or for just exploring your first full design system.</p>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/G1bRl15S1OX8XR54ASpel/17334e319b19753b49f9f073ecb9785e/Figma_Design_System_Intro.png"><img alt="Figma Design System Intro" src="https://images.ctfassets.net/rtkhko6y3s3u/G1bRl15S1OX8XR54ASpel/17334e319b19753b49f9f073ecb9785e/Figma_Design_System_Intro.png"></a></p>
-<p>Figma Design System Intro, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5xVKOtGyh8Tc5GGZUSkyh">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=414:5957">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2e7qSw7d9GiGKPZ20WakEe">✎ edit</a></p>
+<p><a title="Figma Design System Intro - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/G1bRl15S1OX8XR54ASpel/17334e319b19753b49f9f073ecb9785e/Figma_Design_System_Intro.png"><img alt="Figma Design System Intro" src="https://images.ctfassets.net/rtkhko6y3s3u/G1bRl15S1OX8XR54ASpel/17334e319b19753b49f9f073ecb9785e/Figma_Design_System_Intro.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5xVKOtGyh8Tc5GGZUSkyh" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=414:5957" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2e7qSw7d9GiGKPZ20WakEe" class="edit-link">✎ edit</a></p>
 <h2 id="color-set-tokens">Color Set Tokens</h2>
 <ul>
 <li><strong>Color Sets</strong>. Design Systems usually step colors, so this widget will kick off creating values by choosing your step pattern and base color (the color in the center of the steps).</li>
@@ -1560,17 +1574,17 @@
 <li><strong>Locking Hue</strong>. During editing of any one color you can lock the hue and change the hue for all colors.</li>
 <li><strong>ADA feedback</strong>. Design Systems can be built with conventions where each color can work with ADA compliance at specific steps. This widget will surface that information and make it easy to knudge your colors into ADA compliance.</li>
 </ul>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/16sbzdl6tU5BdeLQ49MMjl/33c5a029ac50b8f1fa67e5094bc296a0/Color_Set_Tokens.png"><img alt="Color Set Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/16sbzdl6tU5BdeLQ49MMjl/33c5a029ac50b8f1fa67e5094bc296a0/Color_Set_Tokens.png"></a></p>
-<p>Color Set Tokens, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/6BtrrHU5A610HkSd6q8aV4">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=415:5945">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/QF9aF0ZMFXhKD6JxKG5Vr">✎ edit</a></p>
+<p><a title="Color Set Tokens - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/16sbzdl6tU5BdeLQ49MMjl/33c5a029ac50b8f1fa67e5094bc296a0/Color_Set_Tokens.png"><img alt="Color Set Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/16sbzdl6tU5BdeLQ49MMjl/33c5a029ac50b8f1fa67e5094bc296a0/Color_Set_Tokens.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/6BtrrHU5A610HkSd6q8aV4" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=415:5945" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/QF9aF0ZMFXhKD6JxKG5Vr" class="edit-link">✎ edit</a></p>
 <h2 id="typography-set-tokens">Typography Set Tokens</h2>
 <ul>
 <li><strong>Typography Sets</strong>. Typography can also be managed as a set. A typography token can be created one by one, but also by choosing a set patter with a base font, weight, and size.</li>
 <li><strong>Google Fonts</strong>. The tokens created with the widget are transformed into a Google Fonts embed, so each of the previews (the large sentence and the individual thumbnails) are directly from Google Fonts. If they are not available in Google Fonts (and thus not able to be transformed into a simple css file) you will be alerted immediately.</li>
 </ul>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/5P8l4h9nJmxF3YE4OcjyWQ/610a8b9b3d9576c19655f6ea935e2a2b/Typography_Step_Tokens.png"><img alt="Typography Step Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/5P8l4h9nJmxF3YE4OcjyWQ/610a8b9b3d9576c19655f6ea935e2a2b/Typography_Step_Tokens.png"></a></p>
-<p>Typography Step Tokens, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/54cT6TBJ9JJTQwLud4V9S8">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6153">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3AxQBQDANmkVcn7byWj98A">✎ edit</a></p>
+<p><a title="Typography Step Tokens - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/5P8l4h9nJmxF3YE4OcjyWQ/610a8b9b3d9576c19655f6ea935e2a2b/Typography_Step_Tokens.png"><img alt="Typography Step Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/5P8l4h9nJmxF3YE4OcjyWQ/610a8b9b3d9576c19655f6ea935e2a2b/Typography_Step_Tokens.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/54cT6TBJ9JJTQwLud4V9S8" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6153" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3AxQBQDANmkVcn7byWj98A" class="edit-link">✎ edit</a></p>
 <h2 id="icon-tokens">Icon Tokens</h2>
 <ul>
 <li><strong>Multiple Sources</strong>. In creating a new icon, you can choose from uploading an svg, selecting an icon on the Figma stage, or downloading from Font Awesome.</li>
@@ -1578,31 +1592,31 @@
 <li><strong>Automatic Icon Component</strong>. The widget will automatically create a component that has variants in the names of the icons you create. The widget is actually wrapped around that component.</li>
 <li><strong>Spacing and Offset</strong>. Some icons work better flush to the edges and some do not. The widget will allow you to scale and nudge each specific icon into place.</li>
 </ul>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/36WGBxePiPH68E1YUiMmDQ/e54abacb7d23337840ca7e7e59a2b8ca/Icon_Tokens.png"><img alt="Icon Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/36WGBxePiPH68E1YUiMmDQ/e54abacb7d23337840ca7e7e59a2b8ca/Icon_Tokens.png"></a></p>
-<p>Icon Tokens, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/382Cg13Ey9mjgNd9jYU5Kw">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=416:5986">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/mjKdKkrKbjSYPC4mz4HCu">✎ edit</a></p>
+<p><a title="Icon Tokens - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/36WGBxePiPH68E1YUiMmDQ/e54abacb7d23337840ca7e7e59a2b8ca/Icon_Tokens.png"><img alt="Icon Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/36WGBxePiPH68E1YUiMmDQ/e54abacb7d23337840ca7e7e59a2b8ca/Icon_Tokens.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/382Cg13Ey9mjgNd9jYU5Kw" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=416:5986" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/mjKdKkrKbjSYPC4mz4HCu" class="edit-link">✎ edit</a></p>
 <h2 id="font-awesome-integration">Font Awesome Integration</h2>
 <p>The Font Awesome integration includes using your paid subscription. To use all the available icons in your subscription, you will need to create an api token and a kit that includes these icons. The widget will walk you through attaching that kit via the API token.</p>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/T7nvQx4FF0Xo30oFl64Rp/da8cfc3414b53323824ee0e9e00a548a/Font_Awesome_Integration.png"><img alt="Font Awesome Integration" src="https://images.ctfassets.net/rtkhko6y3s3u/T7nvQx4FF0Xo30oFl64Rp/da8cfc3414b53323824ee0e9e00a548a/Font_Awesome_Integration.png"></a></p>
-<p>Font Awesome Integration, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/59CKy3Kq0rRy8EI93NrF4d">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6090">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1bret6YSOZ46lLVKEwNswj">✎ edit</a></p>
+<p><a title="Font Awesome Integration - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/T7nvQx4FF0Xo30oFl64Rp/da8cfc3414b53323824ee0e9e00a548a/Font_Awesome_Integration.png"><img alt="Font Awesome Integration" src="https://images.ctfassets.net/rtkhko6y3s3u/T7nvQx4FF0Xo30oFl64Rp/da8cfc3414b53323824ee0e9e00a548a/Font_Awesome_Integration.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/59CKy3Kq0rRy8EI93NrF4d" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6090" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1bret6YSOZ46lLVKEwNswj" class="edit-link">✎ edit</a></p>
 <h2 id="effect-tokens">Effect Tokens</h2>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/38DkSASYQ4EDhbQwkqqHGz/a4dc0004f629f7e45c55f6eaeb8aaf0c/Effect_Tokens.png"><img alt="Effect Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/38DkSASYQ4EDhbQwkqqHGz/a4dc0004f629f7e45c55f6eaeb8aaf0c/Effect_Tokens.png"></a></p>
-<p>Effect Tokens, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/a3OB5x9E5vhBqpvT3u69S">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6203">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3QOn3ijt1ZkUOdyKIchfH">✎ edit</a></p>
+<p><a title="Effect Tokens - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/38DkSASYQ4EDhbQwkqqHGz/a4dc0004f629f7e45c55f6eaeb8aaf0c/Effect_Tokens.png"><img alt="Effect Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/38DkSASYQ4EDhbQwkqqHGz/a4dc0004f629f7e45c55f6eaeb8aaf0c/Effect_Tokens.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/a3OB5x9E5vhBqpvT3u69S" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6203" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3QOn3ijt1ZkUOdyKIchfH" class="edit-link">✎ edit</a></p>
 <h2 id="breakpoint-tokens">Breakpoint Tokens</h2>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/3ucfX1p4jKc3favnH9ujMz/b154725c0544700ff9e5a12621633b10/Breakpoint_Tokens.png"><img alt="Breakpoint Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/3ucfX1p4jKc3favnH9ujMz/b154725c0544700ff9e5a12621633b10/Breakpoint_Tokens.png"></a></p>
-<p>Breakpoint Tokens, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/tMfZuUzRgXW3lQlLVGVuJ">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6249">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5a6H9RJS9lmxmSUrT0KVLB">✎ edit</a></p>
+<p><a title="Breakpoint Tokens - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/3ucfX1p4jKc3favnH9ujMz/b154725c0544700ff9e5a12621633b10/Breakpoint_Tokens.png"><img alt="Breakpoint Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/3ucfX1p4jKc3favnH9ujMz/b154725c0544700ff9e5a12621633b10/Breakpoint_Tokens.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/tMfZuUzRgXW3lQlLVGVuJ" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6249" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5a6H9RJS9lmxmSUrT0KVLB" class="edit-link">✎ edit</a></p>
 <h2 id="custom-tokens">Custom Tokens</h2>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/4tZ7Lz29ZPUg2Kn7CTY6dd/0387c0160fc1e8a6e4b5b5f4cbc70477/Custom_Tokens.png"><img alt="Custom Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/4tZ7Lz29ZPUg2Kn7CTY6dd/0387c0160fc1e8a6e4b5b5f4cbc70477/Custom_Tokens.png"></a></p>
-<p>Custom Tokens, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5PY21GoAvJjIEhYl8a0G0V">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6332">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3rl2NJMfp0hh3tcej102yo">✎ edit</a></p>
+<p><a title="Custom Tokens - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/4tZ7Lz29ZPUg2Kn7CTY6dd/0387c0160fc1e8a6e4b5b5f4cbc70477/Custom_Tokens.png"><img alt="Custom Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/4tZ7Lz29ZPUg2Kn7CTY6dd/0387c0160fc1e8a6e4b5b5f4cbc70477/Custom_Tokens.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5PY21GoAvJjIEhYl8a0G0V" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6332" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3rl2NJMfp0hh3tcej102yo" class="edit-link">✎ edit</a></p>
 <h2 id="component-tokens">Component Tokens</h2>
 <p>(Not presently implemented) Component tokens will be created from attaching a component to the Figma Design System widget. They will only create scss transformations since direct css will create relatively unweildy results.</p>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/1qczLdmqKJUsG8LtOvX6z1/18cd16c23b26ce557cc70cb75d8ab843/Component_Tokens.png"><img alt="Component Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/1qczLdmqKJUsG8LtOvX6z1/18cd16c23b26ce557cc70cb75d8ab843/Component_Tokens.png"></a></p>
-<p>Component Tokens, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3qmQPgGANH1tGpM3c2Zyvc">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6379">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2xhCrQGX4aqzb7vhdGNfM6">✎ edit</a></p>
+<p><a title="Component Tokens - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/1qczLdmqKJUsG8LtOvX6z1/18cd16c23b26ce557cc70cb75d8ab843/Component_Tokens.png"><img alt="Component Tokens" src="https://images.ctfassets.net/rtkhko6y3s3u/1qczLdmqKJUsG8LtOvX6z1/18cd16c23b26ce557cc70cb75d8ab843/Component_Tokens.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3qmQPgGANH1tGpM3c2Zyvc" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6379" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2xhCrQGX4aqzb7vhdGNfM6" class="edit-link">✎ edit</a></p>
 <h2 id="downloading-code">Downloading Code</h2>
 <p>Tokens can be transformed instantly and copied to your clipboard with several different outputs:</p>
 <ul>
@@ -1612,37 +1626,41 @@
 <li>Javascript. Tokens transformed into a javascript object.</li>
 </ul>
 <p>This is a subset of all the transformations available with the Figma Design System widget. If you would like to use the Typescript or Atomic transformations you will need to use the GitHub Deploy.</p>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/1073jN2bzY0EcHuXrThG3o/1fdae2ed357d8f8cd32d587c39c1330e/Downloads.png"><img alt="Downloads" src="https://images.ctfassets.net/rtkhko6y3s3u/1073jN2bzY0EcHuXrThG3o/1fdae2ed357d8f8cd32d587c39c1330e/Downloads.png"></a></p>
-<p>Downloads, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5hoQYojqlTzPCLyaf01Xm4">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=515:6149">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3yL83eGvNoEOHCS6GZ3gKV">✎ edit</a></p>
+<p><a title="Downloads - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/1073jN2bzY0EcHuXrThG3o/1fdae2ed357d8f8cd32d587c39c1330e/Downloads.png"><img alt="Downloads" src="https://images.ctfassets.net/rtkhko6y3s3u/1073jN2bzY0EcHuXrThG3o/1fdae2ed357d8f8cd32d587c39c1330e/Downloads.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5hoQYojqlTzPCLyaf01Xm4" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=515:6149" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3yL83eGvNoEOHCS6GZ3gKV" class="edit-link">✎ edit</a></p>
 <h2 id="deployment---github-npm-packages">Deployment - Github NPM Packages</h2>
 <p>Deployment and Github NPM Packages.</p>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/1NVWRrZ8pRlgk7teOOT5ZP/ced8cae884f4d78ce20e32c1e0e2e079/Github_Deployment.png"><img alt="Github Deployment" src="https://images.ctfassets.net/rtkhko6y3s3u/1NVWRrZ8pRlgk7teOOT5ZP/ced8cae884f4d78ce20e32c1e0e2e079/Github_Deployment.png"></a></p>
-<p>Github Deployment, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2rp4QIhQl44YhsiSxy3KWW">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6428">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/18ckMk6Wc17H7o6S7fT7zi">✎ edit</a></p>
+<p><a title="Github Deployment - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/1NVWRrZ8pRlgk7teOOT5ZP/ced8cae884f4d78ce20e32c1e0e2e079/Github_Deployment.png"><img alt="Github Deployment" src="https://images.ctfassets.net/rtkhko6y3s3u/1NVWRrZ8pRlgk7teOOT5ZP/ced8cae884f4d78ce20e32c1e0e2e079/Github_Deployment.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2rp4QIhQl44YhsiSxy3KWW" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6428" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/18ckMk6Wc17H7o6S7fT7zi" class="edit-link">✎ edit</a></p>
 <h2 id="github-configuration">Github Configuration</h2>
 <p>The tokens created with the Figma Design System widget can be immediately transformed on deployment and deployed to a Github repo as well as a Github NPM package. This requires a Github account and an access token that has workflow and read:packages permissions (see below).</p>
 <p>Note: The Figma Design System plugin will create and configure your Github repo for you, so enter a name of a repository that does NOT yet exist.</p>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/5o9Na9IAKpMoLlNeOB7N1/d90b7dbf573bad045c3287b81e4ae947/Github_Configuration.png"><img alt="Github Configuration" src="https://images.ctfassets.net/rtkhko6y3s3u/5o9Na9IAKpMoLlNeOB7N1/d90b7dbf573bad045c3287b81e4ae947/Github_Configuration.png"></a></p>
-<p>Github Configuration, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Qox2a5rtUdedB3p2Z3f54">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6464">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1TA5k44YfysVHMrrwzyNoR">✎ edit</a></p>
+<p><a title="Github Configuration - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/5o9Na9IAKpMoLlNeOB7N1/d90b7dbf573bad045c3287b81e4ae947/Github_Configuration.png"><img alt="Github Configuration" src="https://images.ctfassets.net/rtkhko6y3s3u/5o9Na9IAKpMoLlNeOB7N1/d90b7dbf573bad045c3287b81e4ae947/Github_Configuration.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Qox2a5rtUdedB3p2Z3f54" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=417:6464" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1TA5k44YfysVHMrrwzyNoR" class="edit-link">✎ edit</a></p>
 <h2 id="style-guide">Style Guide</h2>
 <p>A good design system documents in the same motion that it captures values. The Figma Design System is a living document that can be composed and presented as you will with each token set presented clearly in each widget.</p>
 <p><a target="_blank" href="https://assets.ctfassets.net/rtkhko6y3s3u/7xU711XEoyQbXkLtrW7Ayt/bc83c4067ee5ef25de8575a39567f119/Readme_Design_System_-_2023-03-19.pdf">View Readme Design System Style Guide PDF</a></p>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/5TJMbfAPWZLubAGoH3aKSp/1c3915590663167f095f9485ba82012a/Readme_DSys_-_Typography_Page.png"><img alt="Readme DSys - Typography Page" src="https://images.ctfassets.net/rtkhko6y3s3u/5TJMbfAPWZLubAGoH3aKSp/1c3915590663167f095f9485ba82012a/Readme_DSys_-_Typography_Page.png"></a></p>
-<p>Readme DSys - Typography Page, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/7r7UYv6eHuoDUkTpOPQXt">contentful</a>, <a target="_blank" href="https://www.figma.com/file/feMH69om0kW1WpgxX2cffW/?node-id=24:3628">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1USr9brQYVqAQ1ElehfloE">✎ edit</a></p>
+<p><a title="Readme DSys - Typography Page - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/5TJMbfAPWZLubAGoH3aKSp/1c3915590663167f095f9485ba82012a/Readme_DSys_-_Typography_Page.png"><img alt="Readme DSys - Typography Page" src="https://images.ctfassets.net/rtkhko6y3s3u/5TJMbfAPWZLubAGoH3aKSp/1c3915590663167f095f9485ba82012a/Readme_DSys_-_Typography_Page.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/7r7UYv6eHuoDUkTpOPQXt" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/feMH69om0kW1WpgxX2cffW/?node-id=24:3628" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1USr9brQYVqAQ1ElehfloE" class="edit-link">✎ edit</a></p>
 <h2 id="design-system-lifecycle">Design System Lifecycle</h2>
-<p><a title="View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/STDEhsaxXEs9cdoWTaJ5d/cdc67e7901853b888ddcc1f7ef9a3429/Design_System_Lifecycle.png"><img alt="Design System Lifecycle" src="https://images.ctfassets.net/rtkhko6y3s3u/STDEhsaxXEs9cdoWTaJ5d/cdc67e7901853b888ddcc1f7ef9a3429/Design_System_Lifecycle.png"></a></p>
-<p>Design System Lifecycle, source: <a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/7kJIgyai8XdpSIC8SdJMja">contentful</a>, <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=411:6280">figma</a></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5oqbvqoCgeqtlfvEpqN9ti">✎ edit</a></p>
-<h2 id="build-information">Build Information</h2>
+<p><a title="Design System Lifecycle - View Full Size" target="_blank" href="https://images.ctfassets.net/rtkhko6y3s3u/STDEhsaxXEs9cdoWTaJ5d/cdc67e7901853b888ddcc1f7ef9a3429/Design_System_Lifecycle.png"><img alt="Design System Lifecycle" src="https://images.ctfassets.net/rtkhko6y3s3u/STDEhsaxXEs9cdoWTaJ5d/cdc67e7901853b888ddcc1f7ef9a3429/Design_System_Lifecycle.png"></a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/7kJIgyai8XdpSIC8SdJMja" class="edit-link">✎ contentful</a> <a target="_blank" href="https://www.figma.com/file/Msm91sl0dhVPyjUnnbtd7j/?node-id=411:6280" class="edit-link">✎ figma</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5oqbvqoCgeqtlfvEpqN9ti" class="edit-link">✎ edit</a></p>
+<div class="build-information">
+Build Information
+
 <p><em>Dynamically built using contentful-readme-generator. Do not edit directly.</em></p>
 <p><em><strong>updated</strong>: 4/22/2023, 4:22:33 PM</em></p>
 <p><em><strong>space</strong>: rtkhko6y3s3u</em></p>
 <p><em><strong>environment</strong>: master</em></p>
 <p><em><strong>entity id</strong>: 2VGzXFpO7HEpkpuLuKgETd</em></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2VGzXFpO7HEpkpuLuKgETd">✎ edit</a></p>
+</div>
+
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2VGzXFpO7HEpkpuLuKgETd" class="edit-link">✎ edit</a></p>
 
       </body>
     </html>

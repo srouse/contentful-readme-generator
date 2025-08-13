@@ -16,6 +16,21 @@ export default function renderHTML(content, css) {
             --color-accent-fg: #f00;
           }
 
+          .markdown-body .edit-link {
+            font-size: 11px;
+            color: #aaa;
+            margin: 0px;
+          }
+
+          .markdown-body .build-information {
+            font-size: 11px;
+            color: #aaa;
+          }
+
+          .markdown-body .build-information * {
+            margin: 0px;
+          }
+
           h2, h3, h4 {
             margin-top: 30px;
           }

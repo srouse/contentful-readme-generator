@@ -7,7 +7,6 @@
 -->
 
 - [Page Content](#page-content)
-- [Build Information](#build-information)
 
 ---
 
@@ -17,7 +16,8 @@ An example of how Contentful Readme renders a nested page.
 
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3YUuAGRjl7rX6xSHPZHeeu)
 
-## Build Information
+<div class="build-information">
+Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
@@ -28,5 +28,7 @@ An example of how Contentful Readme renders a nested page.
 *__environment__: master*
 
 *__entity id__: 5E3UTKMlQuBJbIXnVWUfDF*
+
+</div>
 
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5E3UTKMlQuBJbIXnVWUfDF)

@@ -1518,6 +1518,21 @@
             --color-accent-fg: #f00;
           }
 
+          .markdown-body .edit-link {
+            font-size: 11px;
+            color: #aaa;
+            margin: 0px;
+          }
+
+          .markdown-body .build-information {
+            font-size: 11px;
+            color: #aaa;
+          }
+
+          .markdown-body .build-information * {
+            margin: 0px;
+          }
+
           h2, h3, h4 {
             margin-top: 30px;
           }
@@ -1530,19 +1545,22 @@
 
 <ul>
 <li><a href="#page-content">Page Content</a></li>
-<li><a href="#build-information">Build Information</a></li>
 </ul>
 <hr>
 <h2 id="page-content">Page Content</h2>
 <p>An example of how Contentful Readme renders a nested page.</p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3YUuAGRjl7rX6xSHPZHeeu">✎ edit</a></p>
-<h2 id="build-information">Build Information</h2>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/3YUuAGRjl7rX6xSHPZHeeu" class="edit-link">✎ edit</a></p>
+<div class="build-information">
+Build Information
+
 <p><em>Dynamically built using contentful-readme-generator. Do not edit directly.</em></p>
 <p><em><strong>updated</strong>: 6/14/2023, 6:53:49 PM</em></p>
 <p><em><strong>space</strong>: rtkhko6y3s3u</em></p>
 <p><em><strong>environment</strong>: master</em></p>
 <p><em><strong>entity id</strong>: 5E3UTKMlQuBJbIXnVWUfDF</em></p>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5E3UTKMlQuBJbIXnVWUfDF">✎ edit</a></p>
+</div>
+
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/5E3UTKMlQuBJbIXnVWUfDF" class="edit-link">✎ edit</a></p>
 
       </body>
     </html>

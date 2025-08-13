@@ -10,7 +10,6 @@
 - [Contentful Content](#contentful-content)
 - [Page Example](#page-example)
 - [Figma Design System Widget](#figma-design-system-widget)
-- [Build Information](#build-information)
 
 ---
 
@@ -120,11 +119,6 @@ npx ctfl-readme build
 ```
 
 
-<video style="width: 100%; height: auto;" src="//videos.ctfassets.net/rtkhko6y3s3u/pKMbNAg7UOrALaSlkGuTi/bbe4de0f909b5d837d873fcec28795eb/No_name_-_12_August_2025.mp4" controls></video>
-
-
-[🖼️ edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/assets/pKMbNAg7UOrALaSlkGuTi)
-
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw)
 
 ## Contentful Content
@@ -225,7 +219,8 @@ ctfl-readme --fileName README-OTHER.md
 
 [Figma Design System Widget &#8599;](./README/md/figma-design-system-widget.md)
 
-## Build Information
+<div class="build-information">
+Build Information
 
 *Dynamically built using contentful-readme-generator. Do not edit directly.*
 
@@ -236,5 +231,7 @@ ctfl-readme --fileName README-OTHER.md
 *__environment__: master*
 
 *__entity id__: 2Ox6brgaOxUyE0QDuNOAmH*
+
+</div>
 
 [&#9998; edit](https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Ox6brgaOxUyE0QDuNOAmH)

@@ -1,15 +1,15 @@
 {
-  "contentfulSpace": "rtkhko6y3s3u",
-  "contentfulEnvironment": "master",
-  "contentfulEntryId": "2Ox6brgaOxUyE0QDuNOAmH",
-  "dist": {
-    "markdown": {
-        "folder": "README/md",
-        "index": "README"
-    },
-    "html": {
-        "folder": "README/html",
-        "index": "README/index"
+    "contentfulSpace": "rtkhko6y3s3u",
+    "contentfulEnvironment": "master",
+    "contentfulEntryId": "2Ox6brgaOxUyE0QDuNOAmH",
+    "dist": {
+        "markdown": {
+            "folder": "README/md",
+            "index": "README"
+        },
+        "html": {
+            "folder": "README/html",
+            "index": "README/index"
+        }
     }
-}
 }
