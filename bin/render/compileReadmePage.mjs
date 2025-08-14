@@ -63,7 +63,6 @@ export default function compileReadmePage(
   hostType.fields.map(typeField => {
     const content = contentObj.fields[typeField.id];
     const shouldRender = typeField.id.indexOf('hidden') === -1;
-    console.log('typeField.id', typeField.id, shouldRender);
 
     if (content) {
       // TEXT
