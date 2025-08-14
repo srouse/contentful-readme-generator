@@ -115,5 +115,5 @@ export default async function createReadmeProject(
     })
   )
 
-  await fsPromise.writeFile(`SOURCE.json`, JSON.stringify(buildState, null, 2));
+  // await fsPromise.writeFile(`SOURCE.json`, JSON.stringify(buildState, null, 2));
 }
