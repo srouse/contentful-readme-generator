@@ -13,7 +13,8 @@ export default function renderReadmePage(
   readmeContentType,
   buildState,
   config,
-  parentPageObj
+  parentPageObj,
+  renderOutput = true
 ) {
   const compiledPage = compileReadmePage(
     page,
@@ -29,7 +30,10 @@ export default function renderReadmePage(
   }
 
   const name = page.fields.name || uniqueDefaultName();
-  return `## ${name}\n\n[${name} &#8599;](./${DIST_FOLDER}/${toKebobCase(name)}.${
-    LINK_EXTENSION
-  })\n\n`;
+  if (renderOutput) {
+    return `## ${name}\n\n[${name} &#8599;](./${DIST_FOLDER}/${toKebobCase(name)}.${
+      LINK_EXTENSION
+    })\n\n`;
+  }
+  return '';
 }

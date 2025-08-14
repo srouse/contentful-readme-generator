@@ -62,7 +62,9 @@ export default function compileReadmePage(
   // fields are mostly dynamic with name markdown syntax
   hostType.fields.map(typeField => {
     const content = contentObj.fields[typeField.id];
-    // console.log('typeField.id', typeField.id, typeField.type, content);
+    const shouldRender = typeField.id.indexOf('hidden') === -1;
+    console.log('typeField.id', typeField.id, shouldRender);
+
     if (content) {
       // TEXT
       if (
@@ -137,7 +139,8 @@ export default function compileReadmePage(
             readmeContentType,
             buildState,
             config,
-            readmeObj
+            readmeObj,
+            shouldRender
           )
         );
       }
@@ -180,7 +183,8 @@ export default function compileReadmePage(
                 readmeContentType,
                 buildState,
                 config,
-                readmeObj
+                readmeObj,
+                shouldRender
               )
             );
           }

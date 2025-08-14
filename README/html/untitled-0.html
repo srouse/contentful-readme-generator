@@ -1539,185 +1539,24 @@
         </style>
       </head>
       <body class="markdown-body">
-        <h1 id="contentful-readme-generator">Contentful Readme Generator</h1>
+        <p><a href="../index.html">home</a></p>
+<h1 id="not-found-fill-out-header">(Not Found, Fill Out Header)</h1>
 
 
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#readme-install">Readme Install</a></li>
-<li><a href="#variables">Variables</a></li>
-<li><a href="#contentful-content">Contentful Content</a></li>
-<li><a href="#page-example">Page Example</a></li>
-<li><a href="#figma-design-system-widget">Figma Design System Widget</a></li>
-</ul>
+
+
 <hr>
-<p><strong>Project Abbreviation</strong>: RDME</p>
-<p><span class="badge-npmversion"><a title="View this project on NPM" target="_blank" href="https://npmjs.org/package/contentful-readme-generator"><img alt="NPM version" src="https://img.shields.io/npm/v/contentful-readme-generator.svg"></a></span>
-<span class="badge-npmdownloads"><a title="View this project on NPM" target="_blank" href="https://npmjs.org/package/contentful-readme-generator"><img alt="NPM downloads" src="https://img.shields.io/npm/dm/contentful-readme-generator.svg"></a></span></p>
-<p><strong>Developer Emails</strong>: <a href="mailto:scott.rouse@gmail.com">scott.rouse@gmail.com</a></p>
-<p><strong>NPM URL</strong>: <a target="_blank" href="https://www.npmjs.com/package/contentful-readme-generator">https://www.npmjs.com/package/contentful-readme-generator</a></p>
-<p><strong>Repo URL</strong>: <a target="_blank" href="https://github.com/srouse/contentful-readme-generator">https://github.com/srouse/contentful-readme-generator</a></p>
-<h2 id="description">Description</h2>
-<p>This is a service that loads a Contentful entry and renders it as a README file in the repo folder. It has the side effect of being able to use this information for other uses, such as project overviews.</p>
-<h2 id="readme-install">Readme Install</h2>
-<h3 id="to-install">To install</h3>
-<pre><code>npm add contentful-readme-generator
-</code></pre>
-<h2 id="variables">Variables</h2>
-<p>You can set up a .env file or a configuration file that can be checked in (and establish child README projects for monorepos)</p>
-<h3 id="base-env-file">Base .env file</h3>
-<pre><code># CTFL README
-CTFL_README_CONTENTFUL_ACCESS_TOKEN=[CDA Access Key]
-</code></pre>
-<h3 id="create-a-env-file-in-your-project">Create a .env file in your project</h3>
-<pre><code># CTFL README
-CTFL_README_CONTENTFUL_ACCESS_TOKEN=[Your Access Token Id]
-
-# SPACE CONFIG
-CTFL_README_CONTENTFUL_SPACE=[Your Space Id *]
-CTFL_README_CONTENTFUL_ENVIRONMENT=[Your Environment Id *]
-CTFL_README_CONTENTFUL_ENTRY_ID=[Your Entry Id *]
-</code></pre>
-<h3 id="setup-local-configuration">Setup Local Configuration</h3>
-<p>Alternative Space configuration. Children allow you to inject READMEs into sub-projects. They only accept contentfulEntryId and childFolder. They will generate READMEs accross an entire monorepo.j</p>
-<pre><code>// ctfl-readme.json
-{
-  "contentfulSpace": "[Your Space Id]",
-  "contentfulEnvironment": "[Your Env]",
-  "contentfulEntryId": "[Your Entry Id]",
-  "htmlTemplate": "templates/htmlTemplate.mjs",
-  "dist": {
-        "markdown": {
-            "folder": "README/md",
-            "index": "README"
-        },
-        "html": {
-            "folder": "README/html",
-            "index": "README/index"
-        }
-    },
-  "children": [
-        {
-            "name": "App A",
-            "contentfulEntryId": "[Child A Entry Id]",
-            "dist": {
-                "markdown": {
-                    "folder": "apps/app-a/README/md",
-                    "index": "apps/app-a/README"
-                },
-                "html": {
-                    "folder": "apps/app-a/README/html",
-                    "index": "apps/app-a/README/index"
-                }
-            }
-        },
-        {
-            "name": "App B",
-            "contentfulEntryId": "[Child B Entry Id]",
-            "dist": {
-                "markdown": {
-                    "folder": "apps/app-b/README/md",
-                    "index": "apps/app-b/README"
-                },
-                "html": {
-                    "folder": "apps/app-b/README/html",
-                    "index": "apps/app-b/README/index"
-                }
-            }
-        }
-    ]
-}
-</code></pre>
-<h3 id="build">build</h3>
-<pre><code>npx ctfl-readme build
-</code></pre>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/4FyaOXdSP67ZUCjVxftGEw" class="edit-link">✎ edit</a></p>
-<h2 id="contentful-content">Contentful Content</h2>
-<h3 id="build-your-content-type">Build your Content Type</h3>
-<p>There is no specific structure needed to build a readme file, but there are limitations. For instance, ctfl-readme will try to render out whatever you put into your Entry, but text and markdown (large text) are ideal. A simple, but effective example would be:</p>
-<pre><code>{
-  "name": "Readme Project",
-  "description": "",
-  "displayField": "title",
-  "fields": [
-    {
-      "id": "title",
-      "name": "Title",
-      "type": (TEXT),
-      ...
-    },
-    {
-      "id": "Badges",
-      "name": "badges",
-      "type": (JSON),
-      ...
-    },
-    {
-      "id": "tableOfContents",
-      "name": "Table of Contents",
-      "type": "Boolean",
-      "defaultValue": {
-        "en-US": true
-      },
-      ...
-    },
-    {
-      "id": "repoUrl",
-      "name": "Repo URL",
-      "type": (TEXT, URL VALIDATED),
-      ...
-    },
-    {
-      "id": "description",
-      "name": "## Description",
-      "type": (MARKDOWN TEXT),
-      ...
-    },
-    {
-      "id": "howToInstall",
-      "name": "## How To Install",
-      "type": (MARKDOWN TEXT),
-      ...
-    },
-</code></pre>
-<h3 id="what-does-not-work-as-well">What Does NOT work as well</h3>
-<p><strong>Rich Text.</strong> Avoid rich text in your Content Type. There is a markdown editor in Contentful, so rich text is a very round about way of getting back to markdown.</p>
-<h3 id="badges">Badges</h3>
-<p>ctfl-readme does understand how to create badges via <a target="_blank" href="https://www.npmjs.com/package/badges">badges</a>. Add a property to your content type with an id of "badges" with the type of JSON and you will be able to pass in a formatted object into badges' renderBadges. Each argument will be a line in the JSON object:</p>
-<pre><code>{
-    "list": [
-        "npmversion"
-    ],
-    "config": {
-        "npmPackageName": "contentful-readme-generator"
-    },
-    "options": {}
-}
-</code></pre>
-<h3 id="headers">Headers</h3>
-<p>Properties with header characters (#, ##, ###) will be expressed as headers before their content is rendered. This works well for markdown entries. The only special case is "# Title" which will render the actual title instead of the literal word "title".</p>
-<h3 id="table-of-contents">Table of Contents</h3>
-<p>Adding a property with an id of "tableOfContents" with a type of boolean will trigger (if true) the rendering of a table of contents. It is done via <a target="_blank" href="https://www.npmjs.com/package/markdown-toc">markdown-toc</a>.</p>
-<h3 id="arguments">Arguments</h3>
-<p>There is only one argument where you can change the destination file name</p>
-<pre><code>ctfl-readme --fileName README-OTHER.md
-</code></pre>
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/1yKn2zknPY9EyUI0YjtWMa" class="edit-link">✎ edit</a></p>
-<h2 id="page-example">Page Example</h2>
-<p><a href="./html/page-example.html">Page Example ↗</a></p>
-<h2 id="figma-design-system-widget">Figma Design System Widget</h2>
-<p><a href="./html/figma-design-system-widget.html">Figma Design System Widget ↗</a></p>
 <div class="build-information">
 Build Information
 
 <p><em>Dynamically built using contentful-readme-generator. Do not edit directly.</em></p>
-<p><em><strong>updated</strong>: 8/14/2025, 12:30:25 PM</em></p>
+<p><em><strong>updated</strong>: 8/14/2025, 12:30:22 PM</em></p>
 <p><em><strong>space</strong>: rtkhko6y3s3u</em></p>
 <p><em><strong>environment</strong>: master</em></p>
-<p><em><strong>entity id</strong>: 2Ox6brgaOxUyE0QDuNOAmH</em></p>
+<p><em><strong>entity id</strong>: 2Lgm9FZ3q0Ss29L2Siedqp</em></p>
 </div>
 
-<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Ox6brgaOxUyE0QDuNOAmH" class="edit-link">✎ edit</a></p>
+<p><a target="_blank" href="https://app.contentful.com/spaces/rtkhko6y3s3u/environments/master/entries/2Lgm9FZ3q0Ss29L2Siedqp" class="edit-link">✎ edit</a></p>
 
       </body>
     </html>
