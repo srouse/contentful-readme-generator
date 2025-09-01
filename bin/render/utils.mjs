@@ -16,7 +16,7 @@ export function isReference(typeField, type) {
         validations.linkContentType.length === 1
       ) {
         const linkContentType = validations.linkContentType[0];
-        return linkContentType === type;
+        return linkContentType.indexOf(type) === 0;
       }
     }
   }
@@ -45,9 +45,14 @@ export function isReferenceArray(typeField, typeArr) {
         ) {
           validations.linkContentType.map(linkContentType => {
             // just need one valid type...will ignore invalid types
-            if (typeArr.indexOf(linkContentType) !== -1) {
-              passes = true;
-            }
+            // if (typeArr.indexOf(linkContentType) !== -1) {
+            //   passes = true;
+            // }
+            typeArr.map(type => {
+              if (linkContentType.indexOf(type) === 0) {
+                passes = true;
+              }
+            })
           })
           // const linkContentType = validations.linkContentType[0];
           // return typeArr.indexOf(linkContentType) !== -1;

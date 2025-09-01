@@ -156,12 +156,12 @@ export default function compileReadmePage(
       )) {
         content.map(contentEntry => {
           const contentType = contentEntry.sys.contentType.sys.id;
-          if (contentType === 'image') {
+          if (contentType.indexOf('image') === 0) {
             readmeObj.body.push(
               renderImage(contentEntry, config)
             );
           }
-          if (contentType === 'readmeContent') {
+          if (contentType.indexOf('readmeContent') === 0) {
             readmeObj.body.push(
               renderReadmeContent(
                 contentEntry,
@@ -172,8 +172,8 @@ export default function compileReadmePage(
             );
           }
           if (
-            contentType === 'readmePage' ||
-            contentType === 'readmeProject'
+            contentType.indexOf('readmePage') === 0 ||
+            contentType.indexOf('readmeProject') === 0
           ) {
             readmeObj.body.push(
               renderReadmePage(
